@@ -1,0 +1,11 @@
+:root {
+  --dark-text: black;
+  --light-text: white;
+  --manrope: "Manrope", sans-serif;
+  --content-padding: 4rem;
+  --container-width: 1840rem;
+  --scale-factor: 1;
+  @include breakpoint(mobile) {
+    --content-padding: 2rem;
+  }
+}

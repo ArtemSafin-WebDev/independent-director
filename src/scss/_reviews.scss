@@ -1,0 +1,345 @@
+.reviews {
+  @include blockWrapper;
+  background-color: var(--dark-text);
+  color: var(--light-text);
+  padding-top: sf(3rem);
+  padding-bottom: sf(23rem);
+  margin-top: -1px;
+
+  @include breakpoint(mobile) {
+    padding-top: sf(2rem);
+    padding-bottom: sf(8rem);
+  }
+}
+
+.reviews__content {
+  @include blockContent;
+}
+
+.reviews__top-row {
+  @include desktopGrid;
+  margin-bottom: sf(10rem);
+
+  @include breakpoint(mobile) {
+    margin-bottom: sf(4rem);
+    display: flex;
+    flex-direction: column;
+    gap: sf(4rem);
+  }
+}
+
+.reviews__small-heading {
+  font-size: sf(1.8rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  letter-spacing: sf(0.036rem);
+  text-transform: uppercase;
+  grid-column: 1 / 4;
+
+  @include breakpoint(mobile) {
+    font-size: sf(1.4rem);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: sf(0.028rem);
+    text-transform: uppercase;
+    grid-column: 1 / -1;
+  }
+}
+
+.reviews__large-text {
+  grid-column: 4 / -1;
+  font-size: sf(8rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 125%;
+  letter-spacing: sf(-0.24rem);
+  margin-top: -0.2em;
+  @include breakpoint(mobile) {
+    font-size: sf(3.2rem);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125%;
+    letter-spacing: sf(-0.032rem);
+    grid-column: 1 / -1;
+    margin-top: 0;
+  }
+}
+
+.reviews__bottom-row {
+  @include desktopGrid;
+}
+
+.reviews__arrows {
+  display: flex;
+  align-items: center;
+  gap: sf(1.2rem);
+  align-self: flex-start;
+  justify-self: flex-start;
+
+  @include breakpoint(mobile) {
+    display: none;
+  }
+}
+
+.reviews__arrow {
+  flex-shrink: 0;
+  display: inline-grid;
+  place-items: center;
+  width: sf(6.4rem);
+  height: sf(6.4rem);
+  border: 1px solid var(--light-text);
+  border-radius: 50%;
+  transition: opacity 0.2s, background-color 0.2s, border-color 0.2s;
+
+  svg {
+    width: sf(2.5rem);
+    height: sf(2.5rem);
+    fill: var(--light-text);
+    transition: fill 0.2s;
+  }
+
+  &.swiper-button-disabled {
+    opacity: 0.5;
+    cursor: default;
+  }
+
+  &--prev {
+    svg {
+      transform: scaleX(-1);
+    }
+  }
+  &:not(.swiper-button-disabled) {
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--light-text);
+        svg {
+          fill: var(--dark-text);
+        }
+      }
+    }
+  }
+}
+
+.reviews__slider {
+  grid-column: 4 / 12;
+
+  @include breakpoint(mobile) {
+    grid-column: 1 / -1;
+  }
+}
+
+.reviews__slider-wrapper {
+  border-radius: sf(1.2rem);
+  background: rgba(255, 255, 255, 0.1);
+
+  .swiper-slide {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  @include breakpoint(mobile) {
+    border-radius: sf(1rem);
+  }
+}
+
+.reviews__slider-card {
+  padding: sf(6rem);
+  display: flex;
+
+  gap: sf(6rem);
+  min-height: sf(42rem);
+  flex-grow: 1;
+
+  @include breakpoint(mobile) {
+    padding: sf(2rem);
+    min-height: sf(49rem);
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    grid-gap: sf(2rem);
+    align-items: flex-start;
+    align-content: flex-start;
+    grid-template-areas: "pagination pagination" "authorimage authorinfo" "text text" "logo logo";
+    grid-template-rows: auto auto auto 1fr;
+  }
+}
+
+.reviews__slider-card-author {
+  border-radius: 50%;
+  overflow: hidden;
+  backface-visibility: hidden;
+  width: sf(13rem);
+  position: relative;
+  align-self: flex-start;
+  &::before {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+  }
+
+  @include breakpoint(mobile) {
+    width: sf(5rem);
+    grid-area: authorimage;
+    align-self: center;
+  }
+}
+
+.reviews__slider-card-author-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.reviews__slider-card-content {
+  width: 30%;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+
+  @include breakpoint(mobile) {
+    width: auto;
+    display: contents;
+  }
+}
+
+.reviews__slider-card-pagination {
+  font-size: sf(1.8rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  letter-spacing: sf(0.036rem);
+  text-transform: uppercase;
+  margin-bottom: sf(4rem);
+
+  @include breakpoint(mobile) {
+    font-size: sf(1.4rem);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: sf(0.028rem);
+    text-transform: uppercase;
+    margin: 0;
+    margin-bottom: sf(1rem);
+    justify-self: flex-start;
+    grid-area: pagination;
+  }
+}
+
+.reviews__slider-card-text {
+  font-size: sf(2.8rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  letter-spacing: sf(-0.056rem);
+  margin-bottom: sf(4rem);
+
+  @include breakpoint(mobile) {
+    font-size: sf(1.8rem);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    margin-bottom: sf(3rem);
+    grid-area: text;
+    margin-top: sf(0.5rem);
+  }
+}
+
+.reviews__slider-card-bottom-row {
+  display: flex;
+  align-items: flex-end;
+  gap: sf(3rem);
+  margin-top: auto;
+  justify-content: space-between;
+
+  @include breakpoint(mobile) {
+    display: contents;
+  }
+}
+
+.reviews__slider-card-author-info {
+  display: flex;
+  flex-direction: column;
+  gap: sf(1rem);
+
+  @include breakpoint(mobile) {
+    gap: sf(0.6rem);
+    grid-area: authorinfo;
+    align-self: center;
+  }
+}
+
+.reviews__slider-card-author-name {
+  font-size: sf(2.8rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  letter-spacing: sf(-0.056rem);
+
+  @include breakpoint(mobile) {
+    font-size: sf(1.8rem);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+  }
+}
+
+.reviews__slider-card-author-role {
+  font-size: sf(1.8rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  letter-spacing: sf(-0.018rem);
+  color: rgba(255, 255, 255, 0.4);
+
+  @include breakpoint(mobile) {
+    font-size: sf(1.6rem);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+    letter-spacing: sf(-0.016rem);
+  }
+}
+
+.reviews__slider-card-company-logo {
+  flex-shrink: 0;
+  width: sf(14.5rem);
+  height: auto;
+
+  @include breakpoint(mobile) {
+    width: sf(13rem);
+    grid-area: logo;
+    align-self: flex-end;
+    justify-self: flex-start;
+  }
+}
+
+.reviews__slider-pagination {
+  display: none;
+
+  @include breakpoint(mobile) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: sf(1.3rem);
+    margin-top: sf(2rem);
+
+    .swiper-pagination-bullet {
+      width: sf(0.8rem);
+      height: sf(0.8rem);
+      border-radius: 50%;
+      flex-shrink: 0;
+      background-color: rgba(255, 255, 255, 0.2);
+      transition: background-color 0.2s;
+      cursor: pointer;
+      &.swiper-pagination-bullet-active {
+        background-color: var(--light-text);
+        cursor: default;
+      }
+    }
+  }
+}

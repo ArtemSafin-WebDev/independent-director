@@ -1,0 +1,35 @@
+{
+  "name": "independent-director",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@types/inputmask": "^5.0.3",
+    "@types/lodash": "^4.14.197",
+    "@types/node": "^20.5.0",
+    "@types/postcss-preset-env": "^8.0.0",
+    "@types/splitting": "^1.0.1",
+    "@types/validator": "^13.11.1",
+    "fast-glob": "^3.3.1",
+    "glob": "^10.3.3",
+    "sass": "^1.65.1",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5",
+    "vite-plugin-handlebars": "^1.6.0",
+    "vite-plugin-svg-icons": "^2.0.1"
+  },
+  "dependencies": {
+    "@studio-freight/lenis": "^1.0.19",
+    "gsap": "^3.12.2",
+    "inputmask": "^5.0.8",
+    "lodash": "^4.17.21",
+    "splitting": "^1.0.6",
+    "swiper": "^10.2.0",
+    "validator": "^13.11.0"
+  }
+}

@@ -17,6 +17,8 @@ export default function about() {
       ".about__parallax-wrapper"
     );
 
+    const originalLargeText = largeText?.cloneNode(true) as Element;
+
     const childLines = new SplitText(largeText, {
       type: "lines",
       linesClass: "lineChild",
@@ -26,6 +28,25 @@ export default function about() {
       linesClass: "lineParent",
     }).lines;
 
+    let animationHasRun = false;
+    let screenWidth = window.innerWidth;
+    const resizeHandler = () => {
+      if (!animationHasRun) {
+        if (window.innerWidth !== screenWidth) {
+          largeText?.replaceWith(originalLargeText);
+          animationHasRun = true;
+          window.removeEventListener("resize", resizeHandler);
+        } else {
+          screenWidth = window.innerWidth;
+          return;
+        }
+      } else {
+        window.removeEventListener("resize", resizeHandler);
+      }
+    };
+
+    window.addEventListener("resize", resizeHandler);
+
     gsap.set(parentLines, {
       overflow: "hidden",
     });
@@ -33,6 +54,10 @@ export default function about() {
       scrollTrigger: {
         trigger: element,
         start: ANIMATION_START,
+      },
+      onComplete: () => {
+        largeText?.replaceWith(originalLargeText);
+        animationHasRun = true;
       },
     });
 

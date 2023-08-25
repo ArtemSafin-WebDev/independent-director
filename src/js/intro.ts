@@ -30,6 +30,25 @@ export default function intro() {
     const childLines = childLinesSplitTextInstance.lines;
     const parentLines = parentLinesSplitTextInstance.lines;
 
+    let animationHasRun = false;
+    let screenWidth = window.innerWidth;
+    const resizeHandler = () => {
+      if (!animationHasRun) {
+        if (window.innerWidth !== screenWidth) {
+          heading?.replaceWith(originalHeading);
+          animationHasRun = true;
+          window.removeEventListener("resize", resizeHandler);
+        } else {
+          screenWidth = window.innerWidth;
+          return;
+        }
+      } else {
+        window.removeEventListener("resize", resizeHandler);
+      }
+    };
+
+    window.addEventListener("resize", resizeHandler);
+
     gsap.set(parentLines, {
       overflow: "hidden",
     });
@@ -38,6 +57,7 @@ export default function intro() {
       delay: 1,
       onComplete: () => {
         heading?.replaceWith(originalHeading);
+        animationHasRun = true;
       },
     });
 

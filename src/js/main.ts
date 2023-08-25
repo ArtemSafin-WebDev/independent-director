@@ -11,10 +11,15 @@ import ticker from "./ticker";
 import intro from "./intro";
 import about from "./about";
 import clients from "./clients";
+import select from "./select";
+import fileUpload from "./fileUpload";
+import forms from "./forms";
+import tasks from "./tasks";
 
 document.addEventListener("DOMContentLoaded", () => {
   smoothScrolling();
   intro();
+  select();
   menu();
   services();
   expertise();
@@ -24,6 +29,9 @@ document.addEventListener("DOMContentLoaded", () => {
   ticker();
   about();
   clients();
+  fileUpload();
+  forms();
+  tasks();
 });
 
 window.addEventListener("load", () => {

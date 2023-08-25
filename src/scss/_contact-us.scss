@@ -2,6 +2,11 @@
   @include blockWrapper;
   grid-row-gap: sf(28rem);
   margin-bottom: sf(24rem);
+
+  @include breakpoint(mobile) {
+    margin-bottom: sf(11rem);
+    grid-row-gap: sf(11rem);
+  }
 }
 
 .contact-us__ticker {
@@ -39,11 +44,11 @@
   flex-shrink: 0;
 
   @include breakpoint(mobile) {
-    font-size: sf(7rem);
+    font-size: sf(5.6rem);
     font-style: normal;
     font-weight: 400;
     line-height: 90%;
-    letter-spacing: sf(-0.28rem);
+    letter-spacing: sf(-0.224rem);
   }
 }
 
@@ -51,10 +56,20 @@
   display: flex;
   flex-direction: column;
   gap: sf(13rem);
+
+  @include breakpoint(mobile) {
+    gap: sf(8rem);
+  }
 }
 
 .contact-us__form-group {
   @include desktopGrid;
+
+  @include breakpoint(mobile) {
+    display: flex;
+    flex-direction: column;
+    gap: sf(2.2rem);
+  }
 }
 
 .contact-us__form-group-title {
@@ -67,6 +82,20 @@
   line-height: 120%;
   letter-spacing: sf(0.036rem);
   text-transform: uppercase;
+
+  @include breakpoint(mobile) {
+    grid-column: 1 / -1;
+    font-size: sf(1.4rem);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: sf(0.028rem);
+    text-transform: uppercase;
+
+    br {
+      display: none;
+    }
+  }
 }
 
 .contact-us__form-group-content {
@@ -74,6 +103,11 @@
   display: flex;
   flex-direction: column;
   gap: sf(7.6rem);
+
+  @include breakpoint(mobile) {
+    grid-column: 1 / -1;
+    gap: sf(4rem);
+  }
 }
 
 .contact-us__form-fields {
@@ -81,6 +115,13 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-gap: sf(17.5rem);
   grid-row-gap: sf(4.4rem);
+  margin-top: sf(-3rem);
+
+  @include breakpoint(mobile) {
+    margin: 0;
+    grid-template-columns: minmax(0, 1fr);
+    grid-gap: sf(1.8rem);
+  }
 }
 
 .contact-us__form-field--fullwidth {
@@ -95,24 +136,53 @@
   font-weight: 400;
   line-height: 90%;
   letter-spacing: sf(-0.038rem);
-  padding: sf(3.2rem) 0;
+  padding: sf(2.4rem) 0;
   color: var(--dark-text);
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  height: auto;
+  transition: border-color 0.2s;
   &::placeholder {
     color: rgba(0, 0, 0, 0.4);
+  }
+
+  &:focus {
+    border-color: var(--dark-text);
+  }
+
+  &.not-valid {
+    border-color: #da0000;
+  }
+
+  @include breakpoint(mobile) {
+    font-size: sf(1.8rem);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    padding: sf(1.6rem) 0;
   }
 }
 
 textarea.contact-us__form-input {
   resize: none;
-  height: sf(16rem);
+  height: sf(20rem);
   display: block;
+
+  @include breakpoint(mobile) {
+    height: sf(5.4rem);
+  }
 }
 
 .contact-us__form-policy-wrapper {
   display: flex;
   align-items: center;
   gap: sf(6rem);
+
+  @include breakpoint(mobile) {
+    flex-direction: column;
+    align-items: stretch;
+    gap: sf(1.5rem);
+    display: contents;
+  }
 }
 
 .contact-us__form-file-upload {
@@ -121,6 +191,27 @@ textarea.contact-us__form-input {
   border-radius: sf(1.2rem);
   border: 1px dashed rgba(0, 0, 0, 0.25);
   width: sf(60rem);
+  display: flex;
+  align-items: center;
+
+  @media (hover: hover) {
+    &:hover {
+      .contact-us__form-file-upload-plus {
+        background-color: var(--dark-text);
+        border-color: var(--dark-text);
+
+        svg {
+          fill: var(--light-text);
+        }
+      }
+    }
+  }
+
+  @include breakpoint(mobile) {
+    width: auto;
+    border-radius: sf(1rem);
+    padding: sf(1.5rem) sf(2rem);
+  }
 }
 
 .contact-us__form-file-upload-input {
@@ -130,12 +221,30 @@ textarea.contact-us__form-input {
   width: 100%;
   height: 100%;
   opacity: 0;
+  cursor: pointer;
 }
 
 .contact-us__form-file-upload-text {
   width: 30%;
   flex-grow: 1;
   padding: 0 sf(2rem);
+  font-size: sf(1.8rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  letter-spacing: sf(0.036rem);
+  text-transform: uppercase;
+
+  @include breakpoint(mobile) {
+    padding-left: 0;
+    padding-right: sf(2.7rem);
+    font-size: sf(1.4rem);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: sf(0.028rem);
+    text-transform: uppercase;
+  }
 }
 
 .contact-us__form-file-upload-plus {
@@ -146,10 +255,22 @@ textarea.contact-us__form-input {
   border: 1px solid rgba(0, 0, 0, 0.25);
   border-radius: 50%;
   flex-shrink: 0;
+  transition: background-color 0.2s, border-color 0.2s;
   svg {
     width: sf(1.6rem);
     height: sf(1.6rem);
     fill: rgba(0, 0, 0, 0.25);
+    transition: fill 0.2s;
+  }
+
+  @include breakpoint(mobile) {
+    width: sf(3.4rem);
+    height: sf(3.4rem);
+
+    svg {
+      width: sf(1.2rem);
+      height: sf(1.2rem);
+    }
   }
 }
 
@@ -171,6 +292,16 @@ textarea.contact-us__form-input {
       }
     }
   }
+
+  @include breakpoint(mobile) {
+    font-size: sf(1.2rem);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: sf(-0.012rem);
+    order: 20;
+    margin-top: sf(-2.5rem);
+  }
 }
 
 .contact-us__form-submit {
@@ -186,6 +317,51 @@ textarea.contact-us__form-input {
   border-radius: sf(1.2rem);
   color: var(--light-text);
   background: var(--dark-text);
+
+  @media (hover: hover) {
+    &:hover {
+      .contact-us__form-submit-text-wrapper::after {
+        transform: translateY(-100%);
+      }
+
+      .contact-us__form-submit-text {
+        transform: translateY(-100%);
+      }
+    }
+  }
+
+  @include breakpoint(mobile) {
+    font-size: sf(1.4rem);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: sf(0.028rem);
+    text-transform: uppercase;
+    padding: sf(2.4rem);
+    border-radius: sf(0.6rem);
+    order: 14;
+    margin-top: sf(2rem);
+  }
+}
+
+.contact-us__form-submit-text-wrapper {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  &::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    height: auto;
+    transition: transform 0.4s;
+  }
+}
+
+.contact-us__form-submit-text {
+  transition: transform 0.4s;
+  display: block;
 }
 
 .contact-us__form-field-select {
@@ -196,6 +372,37 @@ textarea.contact-us__form-input {
   display: flex;
   align-items: center;
   gap: sf(2rem);
+  width: 100%;
+  text-align: left;
+  padding: sf(3.2rem) 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  color: rgba(0, 0, 0, 0.4);
+  svg {
+    flex-shrink: 0;
+    width: sf(3.4rem);
+    height: sf(3.4rem);
+    fill: currentColor;
+    transition: transform 0.2s, fill 0.2s;
+  }
+
+  @include breakpoint(mobile) {
+    font-size: sf(1.8rem);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    padding: sf(1.6rem) 0;
+
+    svg {
+      width: sf(2.8rem);
+      height: sf(2.8rem);
+    }
+  }
+}
+
+.contact-us__form-field-select.active .contact-us__form-field-select-btn {
+  svg {
+    transform: rotate(180deg);
+  }
 }
 
 .contact-us__form-field-select-btn-text {
@@ -206,23 +413,22 @@ textarea.contact-us__form-input {
   font-weight: 400;
   line-height: 90%;
   letter-spacing: sf(-0.038rem);
-  color: rgba(0, 0, 0, 0.4);
-  padding: sf(3.2rem) 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
   transition: color 0.2s;
-  svg {
-    flex-shrink: 0;
-    width: sf(3.4rem);
-    height: sf(3.4rem);
-    fill: currentColor;
-    transition: transform 0.2s, fill 0.2s;
+
+  @include breakpoint(mobile) {
+    font-size: sf(1.8rem);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0;
   }
 }
 
 .contact-us__form-field-select:has(
     .contact-us__form-field-select-checkbox-input:checked
   )
-  .contact-us__form-field-select-btn-text {
+  .contact-us__form-field-select-btn {
   color: var(--dark-text);
 }
 
@@ -234,16 +440,51 @@ textarea.contact-us__form-input {
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s, visibility 0s linear 0.3s;
+  margin-top: -1px;
+  z-index: 60;
+  .contact-us__form-field-select.active & {
+    opacity: 1;
+    visibility: inherit;
+    transition: opacity 0.3s, visibility 0.3s;
+  }
 }
 
 .contact-us__form-field-select-dropdown-inner {
   background-color: var(--light-text);
   color: var(--dark-text);
+  display: flex;
+  flex-direction: column;
+  padding: sf(4rem);
+  gap: sf(4rem);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0px 0px sf(1.2rem) sf(1.2rem);
+
+  @include breakpoint(mobile) {
+    padding: sf(1.8rem);
+    gap: sf(1.6rem);
+    border-radius: 0px 0px sf(0.6rem) sf(0.6rem);
+  }
 }
 
 .contact-us__form-field-select-checkbox {
   user-select: none;
   cursor: pointer;
+  display: block;
+
+  &:last-child {
+    .contact-us__form-field-select-checkbox-text {
+      border: none;
+    }
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      .contact-us__form-field-select-checkbox-input:not(:checked)
+        ~ .contact-us__form-field-select-checkbox-text {
+        color: rgba(0, 0, 0, 0.4);
+      }
+    }
+  }
 }
 
 .contact-us__form-field-select-checkbox-input {
@@ -256,13 +497,18 @@ textarea.contact-us__form-input {
   font-weight: 400;
   line-height: 90%;
   letter-spacing: sf(-0.038rem);
-  color: var(--dark-text);
-  transition: color 0.2s, background-color 0.2s;
-  padding: sf(3.2rem) 0;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  transition: text-decoration-color 0.2s, color 0.2s;
+  @include breakpoint(mobile) {
+    font-size: sf(1.8rem);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+  }
 }
 
 .contact-us__form-field-select-checkbox-input:checked
   ~ .contact-us__form-field-select-checkbox-text {
-  background-color: var(--dark-text);
-  color: var(--light-text);
+  text-decoration-color: var(--dark-text);
 }

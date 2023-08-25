@@ -25,6 +25,8 @@ export default function expertise() {
       ".expertise__large-text"
     );
 
+    const originalLargeText = largeText?.cloneNode(true) as Element;
+
     const sliderBlock =
       element.querySelector<HTMLElement>(".expertise__slider");
     const textSliderBlock = element.querySelector<HTMLElement>(
@@ -39,6 +41,25 @@ export default function expertise() {
       linesClass: "lineParent",
     }).lines;
 
+    let animationHasRun = false;
+    let screenWidth = window.innerWidth;
+    const resizeHandler = () => {
+      if (!animationHasRun) {
+        if (window.innerWidth !== screenWidth) {
+          largeText?.replaceWith(originalLargeText);
+          animationHasRun = true;
+          window.removeEventListener("resize", resizeHandler);
+        } else {
+          screenWidth = window.innerWidth;
+          return;
+        }
+      } else {
+        window.removeEventListener("resize", resizeHandler);
+      }
+    };
+
+    window.addEventListener("resize", resizeHandler);
+
     gsap.set(parentLines, {
       overflow: "hidden",
     });
@@ -47,6 +68,10 @@ export default function expertise() {
       scrollTrigger: {
         trigger: element,
         start: ANIMATION_START,
+      },
+      onComplete: () => {
+        largeText?.replaceWith(originalLargeText);
+        animationHasRun = true;
       },
     });
 

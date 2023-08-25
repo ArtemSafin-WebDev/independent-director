@@ -24,6 +24,8 @@ export default function ourProjects() {
       ".our-projects__large-text"
     );
 
+    const originalLargeText = largeText?.cloneNode(true) as Element;
+
     const sliderBlock = element.querySelector<HTMLElement>(
       ".our-projects__slider"
     );
@@ -41,6 +43,25 @@ export default function ourProjects() {
       linesClass: "lineParent",
     }).lines;
 
+    let animationHasRun = false;
+    let screenWidth = window.innerWidth;
+    const resizeHandler = () => {
+      if (!animationHasRun) {
+        if (window.innerWidth !== screenWidth) {
+          largeText?.replaceWith(originalLargeText);
+          animationHasRun = true;
+          window.removeEventListener("resize", resizeHandler);
+        } else {
+          screenWidth = window.innerWidth;
+          return;
+        }
+      } else {
+        window.removeEventListener("resize", resizeHandler);
+      }
+    };
+
+    window.addEventListener("resize", resizeHandler);
+
     gsap.set(parentLines, {
       overflow: "hidden",
     });
@@ -49,6 +70,10 @@ export default function ourProjects() {
       scrollTrigger: {
         trigger: element,
         start: ANIMATION_START,
+      },
+      onComplete: () => {
+        largeText?.replaceWith(originalLargeText);
+        animationHasRun = true;
       },
     });
     tl.fromTo(

@@ -14,12 +14,8 @@ export default function advantages() {
     const smallText = element.querySelector<HTMLElement>(
       ".advantages__small-text"
     );
-    // const largeTextOuter = element.querySelector<HTMLElement>(
-    //   ".advantages__large-text"
-    // );
 
     const tl = gsap.timeline({
-      // delay: 1,
       scrollTrigger: {
         trigger: element,
         start: ANIMATION_START,
@@ -39,19 +35,6 @@ export default function advantages() {
         ease: "power2.out",
       }
     );
-
-    // tl.fromTo(
-    //   largeTextOuter,
-    //   {
-    //     autoAlpha: 0,
-    //   },
-    //   {
-    //     autoAlpha: 1,
-    //     duration: 1,
-    //     ease: "power3.out",
-    //   },
-    //   "<+=0.5"
-    // );
 
     const numbersList = element.querySelector<HTMLElement>(
       ".advantages__numbers-list"
@@ -123,7 +106,7 @@ export default function advantages() {
             // autoAlpha: 1,
             duration: 0.4,
             ease: "none",
-            "clip-path": "polygon(0% 0%, 100% 0%, 100% 100%, 0 100%",
+            "clip-path": "polygon(0% 0%, 100% 0%, 100% 110%, 0 110%",
           }
         );
       });

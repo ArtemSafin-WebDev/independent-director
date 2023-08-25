@@ -3,13 +3,13 @@
         <div class="contact-us__ticker-track js-ticker-track">
             <div class="contact-us__ticker-inner-track js-ticker-inner-track">
                 <div class="contact-us__ticker-item">
-                    Принять квартиру — легко&nbsp;&nbsp;
+                    Запишитесь на консультацию&nbsp;&nbsp;
                 </div>
             </div>
         </div>
     </div>
     <div class="contact-us__content">
-        <form action="/" method="POST" class="contact-us__form">
+        <form action="/" method="POST" class="contact-us__form js-form">
             <div class="contact-us__form-group">
                 <h3 class="contact-us__form-group-title">
                     Ваши контактные<br> данные
@@ -17,16 +17,22 @@
                 <div class="contact-us__form-group-content">
                     <div class="contact-us__form-fields">
                         <div class="contact-us__form-field">
-                            <input type="text" class="contact-us__form-input" name="your-name" placeholder="ФИО *"
-                                required="">
+                            <div class="contact-us__form-field-wrapper">
+                                <input type="text" class="contact-us__form-input" name="your-name" placeholder="ФИО *"
+                                    required="">
+                            </div>
                         </div>
                         <div class="contact-us__form-field">
-                            <input type="email" class="contact-us__form-input" name="your-email" placeholder="ФИО *"
-                                required="">
+                            <div class="contact-us__form-field-wrapper">
+                                <input type="email" class="contact-us__form-input" name="your-email"
+                                    placeholder="Ваша почта *" required="">
+                            </div>
                         </div>
                         <div class="contact-us__form-field">
-                            <input type="tel" class="contact-us__form-input" name="your-phone" placeholder="Телефон *"
-                                required="">
+                            <div class="contact-us__form-field-wrapper">
+                                <input type="tel" class="contact-us__form-input" name="your-phone"
+                                    placeholder="Телефон *" required="">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -38,13 +44,15 @@
                 <div class="contact-us__form-group-content">
                     <div class="contact-us__form-fields">
                         <div class="contact-us__form-field">
-                            <input type="text" class="contact-us__form-input" name="your-company"
-                                placeholder="Название организации *" required="">
+                            <div class="contact-us__form-field-wrapper">
+                                <input type="text" class="contact-us__form-input" name="your-company"
+                                    placeholder="Название организации *" required="">
+                            </div>
                         </div>
                         <div class="contact-us__form-field">
-                            <div class="contact-us__form-field-select">
-                                <button class="contact-us__form-field-select-btn">
-                                    <span class="contact-us__form-field-select-btn-text">
+                            <div class="contact-us__form-field-select js-select">
+                                <button class="contact-us__form-field-select-btn js-select-btn">
+                                    <span class="contact-us__form-field-select-btn-text js-select-btn-text">
                                         Выберите отрасль
                                     </span>
                                     <svg width="14" height="14" aria-hidden="true">
@@ -56,22 +64,49 @@
                                         <label class="contact-us__form-field-select-checkbox">
                                             <input type="radio" name="your-industry"
                                                 class="contact-us__form-field-select-checkbox-input" value="industry-1">
-                                            <span class="contact-us__form-field-select-checkbox-text">
-                                                Отрасль 1
+                                            <span
+                                                class="contact-us__form-field-select-checkbox-text js-select-choice-text">
+                                                Финтех
                                             </span>
                                         </label>
                                         <label class="contact-us__form-field-select-checkbox">
                                             <input type="radio" name="your-industry"
                                                 class="contact-us__form-field-select-checkbox-input" value="industry-2">
-                                            <span class="contact-us__form-field-select-checkbox-text">
-                                                Отрасль 2
+                                            <span
+                                                class="contact-us__form-field-select-checkbox-text js-select-choice-text">
+                                                Промышленность
                                             </span>
                                         </label>
                                         <label class="contact-us__form-field-select-checkbox">
                                             <input type="radio" name="your-industry"
                                                 class="contact-us__form-field-select-checkbox-input" value="industry-3">
-                                            <span class="contact-us__form-field-select-checkbox-text">
-                                                Отрасль 3
+                                            <span
+                                                class="contact-us__form-field-select-checkbox-text js-select-choice-text">
+                                                ИТ-Компании
+                                            </span>
+                                        </label>
+                                        <label class="contact-us__form-field-select-checkbox">
+                                            <input type="radio" name="your-industry"
+                                                class="contact-us__form-field-select-checkbox-input" value="industry-4">
+                                            <span
+                                                class="contact-us__form-field-select-checkbox-text js-select-choice-text">
+                                                Транспорт и логистика
+                                            </span>
+                                        </label>
+                                        <label class="contact-us__form-field-select-checkbox">
+                                            <input type="radio" name="your-industry"
+                                                class="contact-us__form-field-select-checkbox-input" value="industry-5">
+                                            <span
+                                                class="contact-us__form-field-select-checkbox-text js-select-choice-text">
+                                                Ритейл
+                                            </span>
+                                        </label>
+                                        <label class="contact-us__form-field-select-checkbox">
+                                            <input type="radio" name="your-industry"
+                                                class="contact-us__form-field-select-checkbox-input" value="industry-6">
+                                            <span
+                                                class="contact-us__form-field-select-checkbox-text js-select-choice-text">
+                                                Сфера услуг
                                             </span>
                                         </label>
                                     </div>
@@ -79,15 +114,17 @@
                             </div>
                         </div>
                         <div class="contact-us__form-field contact-us__form-field--fullwidth">
-                            <textarea name="your-comment" class="contact-us__form-input"
-                                placeholder="Напишите свой запрос"></textarea>
+                            <div class="contact-us__form-field-wrapper">
+                                <textarea name="your-comment" class="contact-us__form-input"
+                                    placeholder="Напишите свой запрос"></textarea>
+                            </div>
                         </div>
 
                     </div>
                     <div class="contact-us__form-policy-wrapper">
-                        <label class="contact-us__form-file-upload">
-                            <input type="text" class="contact-us__form-file-upload-input">
-                            <span class="contact-us__form-file-upload-text">
+                        <label class="contact-us__form-file-upload js-file-upload">
+                            <input type="file" class="contact-us__form-file-upload-input">
+                            <span class="contact-us__form-file-upload-text js-file-upload-text">
                                 Прикрепить файл
                             </span>
                             <span class="contact-us__form-file-upload-plus">
@@ -103,7 +140,11 @@
                         </div>
                     </div>
                     <button class="contact-us__form-submit" type="submit">
-                        Отправить заявку
+                        <span class="contact-us__form-submit-text-wrapper" data-text="Отправить заявку">
+                            <span class="contact-us__form-submit-text">
+                                Отправить заявку
+                            </span>
+                        </span>
                     </button>
                 </div>
             </div>

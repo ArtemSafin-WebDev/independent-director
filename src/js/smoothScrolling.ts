@@ -16,4 +16,17 @@ export default function smoothScrolling() {
   });
 
   gsap.ticker.lagSmoothing(0);
+
+  const anchorLinks = Array.from(
+    document.querySelectorAll<HTMLAnchorElement>(".js-anchor")
+  );
+  anchorLinks.forEach((link) => {
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      const hash = link.hash;
+      lenis.scrollTo(hash, {
+        offset: -30,
+      });
+    });
+  });
 }

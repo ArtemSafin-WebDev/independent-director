@@ -7,6 +7,15 @@
   z-index: 50;
   color: var(--light-text);
   @include blockWrapper;
+
+  &--dark {
+    color: var(--dark-text);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+    @include breakpoint(mobile) {
+      border: none;
+    }
+  }
 }
 
 .page-header__content {
@@ -48,6 +57,16 @@
   width: 100%;
   height: auto;
   opacity: 0;
+}
+
+.page-header--dark .page-header__logo-image {
+  &:nth-child(1) {
+    opacity: 0;
+  }
+
+  &:nth-child(2) {
+    opacity: 1;
+  }
 }
 
 body.menu-open .page-header__logo-image {
@@ -150,7 +169,7 @@ body.menu-open .page-header__logo-image {
     background-color: #fff;
     display: flex;
     flex-direction: column;
-
+    border: 1px solid rgba(0, 0, 0, 0.1);
     color: var(--dark-text);
     border-radius: sf(0.6rem);
   }
@@ -211,6 +230,14 @@ body.menu-open .page-header__logo-image {
       transition: fill 0.2s, transform 0.2s;
       width: sf(0.8rem);
       height: sf(0.5rem);
+    }
+
+    .page-header--dark & {
+      color: var(--dark-text);
+
+      svg {
+        fill: var(--dark-text);
+      }
     }
   }
 
@@ -293,6 +320,14 @@ body.menu-open .page-header__logo-image {
     transition: transform 0.3s;
   }
 
+  .page-header--dark & {
+    color: var(--dark-text);
+    &:link,
+    &:visited {
+      color: var(--dark-text);
+    }
+  }
+
   @media (hover: hover) {
     &:hover {
       &::after {
@@ -363,6 +398,14 @@ body.menu-open .page-header__logo-image {
   &:link,
   &:visited {
     color: var(--light-text);
+  }
+
+  .page-header--dark & {
+    color: var(--dark-text);
+    &:link,
+    &:visited {
+      color: var(--dark-text);
+    }
   }
 
   &::after {
@@ -449,6 +492,23 @@ body.menu-open .page-header__logo-image {
     }
   }
 
+  .page-header--dark & {
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    svg {
+      fill: var(--dark-text);
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--dark-text);
+        border-color: var(--dark-text);
+        svg {
+          fill: var(--light-text);
+        }
+      }
+    }
+  }
+
   @include breakpoint(mobile) {
     width: sf(6rem);
     height: sf(6rem);
@@ -485,6 +545,14 @@ body.menu-open .page-header__logo-image {
       width: 26px;
       background-color: var(--light-text);
       transition: background-color 0.2s, transform 0.2s;
+    }
+
+    .page-header--dark & {
+      border-color: rgba(0, 0, 0, 0.1);
+      &::before,
+      &::after {
+        background-color: var(--dark-text);
+      }
     }
   }
 }

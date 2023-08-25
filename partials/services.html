@@ -1,4 +1,4 @@
-<section class="services">
+<section class="services" id="services">
     <div class="services__content">
         <h2 class="services__small-heading">
             наши направления
@@ -139,19 +139,21 @@
                     </a>
                 </li>
             </ol>
-            <a href="#" class="services__learn-more">
-                <h3 class="services__learn-more-title">
-                    Все направления
-                </h3>
-                <div class="services__learn-more-text">
-                    Узнать больше о наших направлениях
-                </div>
-                <div class="services__learn-more-arrow">
-                    <svg width="14" height="14" aria-hidden="true">
-                        <use xlink:href="#arrow-right"></use>
-                    </svg>
-                </div>
-            </a>
+            {{#unless noServicesLearnMore}}
+                <a href="#" class="services__learn-more">
+                    <h3 class="services__learn-more-title">
+                        Все направления
+                    </h3>
+                    <div class="services__learn-more-text">
+                        Узнать больше о наших направлениях
+                    </div>
+                    <div class="services__learn-more-arrow">
+                        <svg width="14" height="14" aria-hidden="true">
+                            <use xlink:href="#arrow-right"></use>
+                        </svg>
+                    </div>
+                </a>
+            {{/unless}}
         </div>
 
     </div>

@@ -253,3 +253,11 @@ select:-webkit-autofill:focus {
 .lenis.lenis-stopped {
   overflow: hidden;
 }
+
+[class*="ymaps-2"][class*="-ground-pane"] {
+  filter: grayscale(100%);
+}
+
+[class*="ymaps-2"][class*="-copyrights-pane"] {
+  display: none;
+}

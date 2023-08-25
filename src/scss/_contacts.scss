@@ -1,0 +1,323 @@
+.contacts {
+  @include blockWrapper;
+  padding-top: sf(16rem);
+  margin-bottom: sf(8.2rem);
+  grid-row-gap: sf(13rem);
+
+  @include breakpoint(mobile) {
+    padding-top: sf(9rem);
+    margin-bottom: sf(11rem);
+    grid-row-gap: sf(6rem);
+  }
+}
+
+.contacts__content {
+  @include blockContent;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-gap: 2rem;
+  align-items: flex-start;
+  grid-row-gap: 0;
+}
+
+.contacts__breadcrumbs {
+  align-self: flex-start;
+  justify-self: flex-start;
+  grid-column: 1 / -1;
+  color: var(--dark-text);
+  margin-bottom: sf(21rem);
+  @include breakpoint(mobile) {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    margin-bottom: sf(10rem);
+  }
+  a {
+    font-size: sf(1.8rem);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: sf(0.018rem);
+    text-transform: uppercase;
+    transition: color 0.2s, text-decoration-color 0.2s;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+
+    @include breakpoint(mobile) {
+      font-size: sf(1.4rem);
+      font-style: normal;
+      font-weight: 400;
+      line-height: 120%;
+      letter-spacing: sf(0.028rem);
+      text-transform: uppercase;
+    }
+
+    &.active {
+      color: rgba(0, 0, 0, 0.25);
+      cursor: default;
+    }
+    &::after {
+      content: " / ";
+    }
+
+    &:last-child {
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
+
+.contacts__wrapper {
+  display: flex;
+  flex-direction: column;
+  grid-column: 4 / -1;
+
+  @include breakpoint(mobile) {
+    grid-column: 1 / -1;
+  }
+}
+
+.contacts__heading {
+  font-size: sf(20rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 90%;
+  letter-spacing: sf(-0.8rem);
+  margin-bottom: sf(13rem);
+
+  @include breakpoint(mobile) {
+    font-size: sf(5.6rem);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 90%;
+    letter-spacing: sf(-0.224rem);
+    margin-bottom: sf(6rem);
+  }
+}
+
+.contacts__top-row {
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(9, minmax(0, 1fr));
+  align-items: flex-start;
+  align-content: flex-start;
+  margin-bottom: sf(7.6rem);
+
+  @include breakpoint(mobile) {
+    display: flex;
+    flex-direction: column;
+    gap: sf(4rem);
+    align-items: stretch;
+    margin-bottom: sf(4rem);
+  }
+}
+
+.contacts__phone {
+  display: flex;
+  flex-direction: column;
+  grid-column: 1 / 7;
+  gap: sf(2.4rem);
+
+  @include breakpoint(mobile) {
+    grid-column: 1 / -1;
+    gap: sf(1.5rem);
+  }
+}
+
+.contacts__phone-title,
+.contacts__social-title,
+.contacts__card-title {
+  font-size: sf(1.8rem);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%;
+  letter-spacing: sf(0.018rem);
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.4);
+  @include breakpoint(mobile) {
+    font-size: sf(1.4rem);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: sf(0.028rem);
+    text-transform: uppercase;
+  }
+}
+
+.contacts__phone-link {
+  font-size: sf(8rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 110%;
+  letter-spacing: sf(-0.24rem);
+  transition: color 0.2s, text-decoration-color 0.2s;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+
+  @media (hover: hover) {
+    &:hover {
+      text-decoration-color: var(--dark-text);
+    }
+  }
+
+  @include breakpoint(mobile) {
+    font-size: sf(3.2rem);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+    letter-spacing: sf(-0.032rem);
+  }
+}
+
+.contacts__social {
+  grid-column: 7 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: sf(2.4rem);
+
+  @include breakpoint(mobile) {
+    gap: sf(1.5rem);
+    grid-column: 1 / -1;
+  }
+}
+
+.contacts__social-list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: sf(1.2rem);
+
+  @include breakpoint(mobile) {
+    gap: sf(1.5rem);
+  }
+}
+
+.contacts__social-list-item {
+  flex-shrink: 0;
+}
+
+.contacts__social-link {
+  display: grid;
+  place-items: center;
+  width: sf(8rem);
+  height: sf(8rem);
+  position: relative;
+  z-index: 1;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background-color: var(--dark-text);
+    z-index: -1;
+    transition: transform 0.3s;
+  }
+  svg {
+    width: 80%;
+    height: 80%;
+    fill: var(--light-text);
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      &::before {
+        transform: scale(0.9);
+      }
+    }
+  }
+
+  @include breakpoint(mobile) {
+    width: sf(5rem);
+    height: sf(5rem);
+  }
+}
+
+.contacts__list {
+  display: flex;
+  flex-direction: column;
+  gap: sf(7.6rem);
+
+  @include breakpoint(mobile) {
+    gap: sf(3.6rem);
+  }
+}
+
+.contacts__card {
+  display: flex;
+  flex-direction: column;
+  gap: sf(2.4rem);
+  align-items: flex-start;
+
+  @include breakpoint(mobile) {
+    gap: sf(1.5rem);
+  }
+}
+
+.contacts__card-link {
+  font-size: sf(3.8rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 90%;
+  letter-spacing: sf(-0.038rem);
+  transition: color 0.2s, text-decoration-color 0.2s;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+
+  @media (hover: hover) {
+    &:hover {
+      text-decoration-color: var(--dark-text);
+    }
+  }
+
+  @include breakpoint(mobile) {
+    font-size: sf(2rem);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+    letter-spacing: sf(-0.02rem);
+  }
+}
+
+.contacts__card-text {
+  font-size: sf(3.8rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 90%;
+  letter-spacing: sf(-0.038rem);
+
+  @include breakpoint(mobile) {
+    font-size: sf(2rem);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+    letter-spacing: sf(-0.02rem);
+  }
+}
+
+.contacts__map {
+  @include blockContent;
+  position: relative;
+  border-radius: sf(1.2rem);
+  overflow: hidden;
+  &::before {
+    content: "";
+    display: block;
+    padding-bottom: 46.9%;
+  }
+
+  @include breakpoint(mobile) {
+    border-radius: 0;
+    &::before {
+      padding-bottom: 160%;
+    }
+  }
+}
+
+.contacts__map-inner {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--dark-text);
+}

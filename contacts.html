@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+  <head>
+    {{> meta }}
+  </head>
+
+  <body>
+    {{> header }}
+    <main class="page-main">
+
+      {{> contacts }}
+      {{> order-service }}
+      {{> success-modal }}
+      {{> error-modal }}
+    </main>
+    {{> footer }}
+
+    <script type="module" src="/src/js/main.ts"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=7072ea49-c921-4095-946a-bb99633a89da&lang=ru_RU"
+      type="text/javascript">
+      </script>
+    <script src="/js/map.js"></script>
+  </body>
+
+</html>

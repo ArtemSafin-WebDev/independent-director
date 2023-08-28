@@ -25,13 +25,14 @@ document.addEventListener("DOMContentLoaded", () => {
   expertise();
   ourProjects();
   advantages();
-  reviews();
+
   ticker();
   about();
+  tasks();
   clients();
+  reviews();
   fileUpload();
   forms();
-  tasks();
 });
 
 window.addEventListener("load", () => {

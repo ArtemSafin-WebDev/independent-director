@@ -28,6 +28,7 @@ export default function showMoreProjects() {
       btn.disabled = true;
 
       try {
+        page++;
         const res = await axios.get(url, {
           signal: controller.signal,
           params: {
@@ -67,11 +68,10 @@ export default function showMoreProjects() {
           );
         }
 
-        page++;
-
         ScrollTrigger.refresh();
       } catch (err) {
         console.error(err);
+        page--;
         return;
       } finally {
         btn.disabled = false;

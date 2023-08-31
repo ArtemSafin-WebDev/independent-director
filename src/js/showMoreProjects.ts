@@ -67,6 +67,8 @@ export default function showMoreProjects() {
           );
         }
 
+        page++;
+
         ScrollTrigger.refresh();
       } catch (err) {
         console.error(err);

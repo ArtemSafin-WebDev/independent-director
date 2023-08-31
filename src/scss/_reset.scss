@@ -261,3 +261,8 @@ select:-webkit-autofill:focus {
 [class*="ymaps-2"][class*="-copyrights-pane"] {
   display: none;
 }
+
+button[disabled] {
+  pointer-events: none;
+  cursor: default;
+}

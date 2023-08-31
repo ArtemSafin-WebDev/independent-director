@@ -15,6 +15,7 @@ import select from "./select";
 import fileUpload from "./fileUpload";
 import forms from "./forms";
 import tasks from "./tasks";
+import showMoreProjects from "./showMoreProjects";
 
 document.addEventListener("DOMContentLoaded", () => {
   smoothScrolling();
@@ -33,6 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
   reviews();
   fileUpload();
   forms();
+  showMoreProjects();
 });
 
 window.addEventListener("load", () => {

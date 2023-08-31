@@ -25,6 +25,9 @@ export default function forms() {
   forms.forEach((form) => {
     const formValidator = new Validator(form);
     const controller = new AbortController();
+    const submitBtn = form.querySelector<HTMLButtonElement>(
+      'button[type="submit"]'
+    );
 
     const handleFormSubmit = (event: SubmitEvent) => {
       event.preventDefault();
@@ -33,7 +36,7 @@ export default function forms() {
 
       if (formValidator.valid) {
         const formData = new FormData(form);
-
+        if (submitBtn) submitBtn.disabled = true;
         axios
           .post(form.action, formData, {
             signal: controller.signal,
@@ -43,16 +46,24 @@ export default function forms() {
           })
           .then((res) => {
             console.log(res.data);
-            document.body.classList.add("modal-open");
-            successModal?.classList.add("active");
             if (form) {
               form.reset();
+            }
+            if (res.data.status === "mail_sent" && successModal) {
+              document.body.classList.add("modal-open");
+              successModal?.classList.add("active");
+            } else {
+              document.body.classList.add("modal-open");
+              errorModal?.classList.add("active");
             }
           })
           .catch((err) => {
             document.body.classList.add("modal-open");
             errorModal?.classList.add("active");
             console.error(err);
+          })
+          .finally(() => {
+            if (submitBtn) submitBtn.disabled = false;
           });
       }
     };

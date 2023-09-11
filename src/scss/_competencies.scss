@@ -1,0 +1,135 @@
+.competencies {
+  @include blockWrapper;
+  margin-bottom: 23rem;
+
+  @include breakpoint(mobile) {
+    margin-bottom: sf(11rem);
+  }
+}
+
+.competencies__content {
+  @include blockContent;
+  @include desktopGrid;
+
+  @include breakpoint(mobile) {
+    display: flex;
+    flex-direction: column;
+    gap: sf(4rem);
+  }
+}
+
+.competencies__small-heading {
+  font-size: sf(1.8rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  letter-spacing: sf(0.036rem);
+  text-transform: uppercase;
+  grid-column: 1 / 4;
+
+  @include breakpoint(mobile) {
+    font-size: sf(1.4rem);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: sf(0.028rem);
+    text-transform: uppercase;
+    grid-column: 1 / -1;
+  }
+}
+
+.competencies__slider {
+  grid-column: 4 / -1;
+  @include breakpoint(mobile) {
+    grid-column: 1 / -1;
+  }
+}
+
+.competencies__list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-gap: sf(7.8rem);
+  grid-row-gap: sf(8.5rem);
+
+  @include breakpoint(mobile) {
+    grid-template-columns: minmax(0, 1fr);
+    grid-gap: sf(4.5rem);
+  }
+}
+
+.competencies__list-item {
+  display: flex;
+  flex-direction: column;
+  &::before {
+    display: none;
+  }
+}
+
+.competencies__card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-top: sf(4rem);
+  border-top: 2px solid rgba(16, 47, 52, 0.1);
+  gap: sf(4rem);
+
+  @include breakpoint(mobile) {
+    padding-top: sf(2.5rem);
+    gap: sf(2.5rem);
+  }
+
+  &::before {
+    content: counter(ordered-list, decimal-leading-zero);
+    top: sf(4rem);
+    right: 0;
+    font-size: sf(2.4rem);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: sf(-0.072rem);
+    position: absolute;
+    color: #b2b2b2;
+    text-align: right;
+
+    @include breakpoint(mobile) {
+      font-size: sf(1.6rem);
+      font-style: normal;
+      font-weight: 400;
+      line-height: 110%;
+      letter-spacing: sf(-0.016rem);
+      top: sf(2.5rem);
+    }
+  }
+}
+
+.competencies__card-title {
+  font-size: sf(4.2rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  letter-spacing: sf(-0.042rem);
+  padding-right: sf(2rem);
+
+  @include breakpoint(mobile) {
+    font-size: sf(2.6rem);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: sf(-0.026rem);
+  }
+}
+
+.competencies__card-text {
+  font-size: sf(2.4rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+
+  @include breakpoint(mobile) {
+    font-size: sf(1.6rem);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+    letter-spacing: sf(-0.016rem);
+  }
+}

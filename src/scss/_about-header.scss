@@ -1,0 +1,145 @@
+.about-header {
+  @include blockWrapper;
+  position: relative;
+  z-index: 1;
+  margin-bottom: sf(15.5rem);
+  color: white;
+  overflow: hidden;
+  backface-visibility: hidden;
+  @include breakpoint(mobile) {
+    margin-bottom: sf(10rem);
+  }
+}
+
+.about-header__bg {
+  inset: 0;
+  position: absolute;
+  z-index: -1;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.5) 0%,
+      rgba(0, 0, 0, 0.5) 100%
+    );
+
+    @include breakpoint(mobile) {
+      background: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.3) 0%,
+        rgba(0, 0, 0, 0.3) 100%
+      );
+    }
+  }
+}
+
+.about-header__parallax {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.about-header__bg-image {
+  @include imageFill;
+}
+
+.about-header__content {
+  @include blockContent;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding-top: sf(16rem);
+  padding-bottom: sf(16rem);
+
+  @include desktopGrid;
+
+  @media (max-aspect-ratio: 16 / 16) and (min-width: 641px) {
+    min-height: sf(108rem);
+  }
+
+  @include breakpoint(mobile) {
+    display: flex;
+    flex-direction: column;
+    padding-top: sf(11rem);
+    padding-bottom: sf(9.5rem);
+    gap: sf(4rem);
+  }
+}
+
+.about-header__breadcrumbs {
+  align-self: flex-start;
+  justify-self: flex-start;
+  grid-column: 1 / 4;
+  color: rgba(255, 255, 255, 0.4);
+
+  @include breakpoint(mobile) {
+    grid-column: 1 / -1;
+  }
+  a {
+    font-size: sf(1.8rem);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: sf(0.018rem);
+    text-transform: uppercase;
+    transition: color 0.2s, text-decoration-color 0.2s;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+
+    @include breakpoint(mobile) {
+      font-size: sf(1.4rem);
+      font-style: normal;
+      font-weight: 400;
+      line-height: 120%;
+      letter-spacing: sf(0.028rem);
+      text-transform: uppercase;
+    }
+
+    &.active {
+      color: white;
+      cursor: default;
+    }
+    &::after {
+      content: " / ";
+    }
+
+    &:last-child {
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
+
+.about-header__heading {
+  font-size: sf(16.5rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: sf(-0.66rem);
+  grid-column: 4 / 10;
+  margin-top: -0.1em;
+
+  .lineParent {
+    padding-bottom: 0.13em;
+    margin-bottom: -0.13em;
+  }
+
+  .spacer {
+    display: inline-block;
+    width: 21%;
+  }
+  @include breakpoint(mobile) {
+    font-size: sf(5.6rem);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 90%;
+    letter-spacing: sf(-0.224rem);
+    grid-column: 1 / -1;
+    margin-top: auto;
+  }
+}

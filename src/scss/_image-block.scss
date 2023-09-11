@@ -3,6 +3,11 @@
   overflow: hidden;
   backface-visibility: hidden;
   margin-bottom: sf(26rem);
+  background-color: black;
+
+  &--no-margin {
+    margin-bottom: 0;
+  }
 
   &::before {
     content: "";
@@ -15,6 +20,10 @@
 
     &::before {
       padding-bottom: 74%;
+    }
+
+    &--no-margin {
+      margin-bottom: 0;
     }
   }
 }

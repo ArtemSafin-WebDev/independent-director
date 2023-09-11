@@ -3,7 +3,7 @@ import "../scss/style.scss";
 import menu from "./menu";
 import services from "./services";
 import expertise from "./expertise";
-import ourProjects from "./our-projects";
+import ourProjects from "./ourProjects";
 import advantages from "./advantages";
 import smoothScrolling from "./smoothScrolling";
 import reviews from "./reviews";
@@ -16,6 +16,14 @@ import fileUpload from "./fileUpload";
 import forms from "./forms";
 import tasks from "./tasks";
 import showMoreProjects from "./showMoreProjects";
+import ourGoal from "./ourGoal";
+import team from "./team";
+import history from "./history";
+import aboutHeader from "./aboutHeader";
+import aboutUs from "./aboutUs";
+import ourAdvantage from "./ourAdvantage";
+import competencies from "./competencies";
+import becomePart from "./becomePart";
 
 document.addEventListener("DOMContentLoaded", () => {
   smoothScrolling();
@@ -26,7 +34,6 @@ document.addEventListener("DOMContentLoaded", () => {
   expertise();
   ourProjects();
   advantages();
-
   ticker();
   about();
   tasks();
@@ -35,6 +42,14 @@ document.addEventListener("DOMContentLoaded", () => {
   fileUpload();
   forms();
   showMoreProjects();
+  ourGoal();
+  team();
+  history();
+  aboutHeader();
+  aboutUs();
+  ourAdvantage();
+  competencies();
+  becomePart();
 });
 
 window.addEventListener("load", () => {

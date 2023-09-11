@@ -1,0 +1,91 @@
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { SplitText } from "./vendor/gsap/SplitText";
+
+import { ANIMATION_START } from "./constants";
+
+gsap.registerPlugin(ScrollTrigger, SplitText);
+
+export default function ourAdvantage() {
+  const elements = Array.from(
+    document.querySelectorAll<HTMLElement>(".our-advantage")
+  );
+
+  elements.forEach((element) => {
+    const author = element.querySelector<HTMLElement>(".our-advantage__author");
+    const largeText = element.querySelector<HTMLElement>(
+      ".our-advantage__large-text"
+    );
+
+    const originalLargeText = largeText?.cloneNode(true) as Element;
+    const childLines = new SplitText(largeText, {
+      type: "lines",
+      linesClass: "lineChild",
+    }).lines;
+    const parentLines = new SplitText(largeText, {
+      type: "lines",
+      linesClass: "lineParent",
+    }).lines;
+
+    let animationHasRun = false;
+    let screenWidth = window.innerWidth;
+    const resizeHandler = () => {
+      if (!animationHasRun) {
+        if (window.innerWidth !== screenWidth) {
+          largeText?.replaceWith(originalLargeText);
+          animationHasRun = true;
+          window.removeEventListener("resize", resizeHandler);
+        } else {
+          screenWidth = window.innerWidth;
+          return;
+        }
+      } else {
+        window.removeEventListener("resize", resizeHandler);
+      }
+    };
+
+    window.addEventListener("resize", resizeHandler);
+
+    gsap.set(parentLines, {
+      overflow: "hidden",
+    });
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: element,
+        start: ANIMATION_START,
+      },
+      onComplete: () => {
+        largeText?.replaceWith(originalLargeText);
+        animationHasRun = true;
+      },
+    });
+
+    tl.fromTo(
+      author,
+      {
+        autoAlpha: 0,
+        y: 30,
+      },
+      {
+        autoAlpha: 1,
+        duration: 0.4,
+        y: 0,
+        ease: "power1.out",
+      }
+    );
+
+    tl.fromTo(
+      childLines,
+      {
+        yPercent: 100,
+      },
+      {
+        yPercent: 0,
+        duration: 1,
+        stagger: 0.1,
+      },
+      "<"
+    );
+  });
+}

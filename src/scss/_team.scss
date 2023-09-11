@@ -1,0 +1,196 @@
+.team {
+  @include blockWrapper;
+  margin-bottom: 23rem;
+
+  @include breakpoint(mobile) {
+    margin-bottom: sf(11rem);
+  }
+}
+
+.team__content {
+  @include blockContent;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-gap: 2rem;
+
+  @include breakpoint(mobile) {
+    display: flex;
+    flex-direction: column;
+    gap: sf(4rem);
+  }
+}
+
+.team__small-heading {
+  font-size: sf(1.8rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  letter-spacing: sf(0.036rem);
+  text-transform: uppercase;
+  grid-column: 1 / 4;
+
+  @include breakpoint(mobile) {
+    font-size: sf(1.4rem);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: sf(0.028rem);
+    text-transform: uppercase;
+    grid-column: 1 / -1;
+  }
+}
+
+.team__slider {
+  grid-column: 4 / -1;
+
+  .swiper {
+    overflow: visible;
+  }
+
+  .swiper-wrapper {
+    @include breakpointMF(small-tablet) {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-gap: sf(2rem);
+      grid-row-gap: sf(8.5rem);
+    }
+  }
+
+  .swiper-slide {
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoint(mobile) {
+      width: sf(33.5rem);
+      margin-right: sf(1.2rem);
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.team__card {
+  display: flex;
+  flex-direction: column;
+}
+
+.team__card-image-container {
+  position: relative;
+  border-radius: sf(1.2rem);
+  overflow: hidden;
+  margin-bottom: sf(4rem);
+  &::before {
+    content: "";
+    display: block;
+    padding-bottom: 112%;
+  }
+
+  @include breakpoint(mobile) {
+    margin-bottom: sf(2.8rem);
+  }
+}
+
+.team__card-image {
+  @include imageFill;
+}
+
+.team__card-role {
+  font-size: sf(2.4rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: sf(-0.072rem);
+  margin-bottom: sf(2rem);
+  @include breakpoint(mobile) {
+    font-size: sf(1.4rem);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    margin-bottom: sf(0.8rem);
+  }
+}
+
+.team__card-name {
+  font-size: sf(3.6rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  letter-spacing: sf(-0.036rem);
+  width: min-content;
+
+  @include breakpoint(mobile) {
+    font-size: sf(2.6rem);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: sf(-0.026rem);
+    width: auto;
+  }
+}
+
+.team__career-link {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+
+  &::before {
+    content: "";
+    display: block;
+    padding-bottom: 112%;
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+  }
+}
+
+.team__career-link-image-wrapper {
+  grid-column: 1 / -1;
+  grid-row: 1 / 2;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-self: center;
+  justify-self: center;
+  width: 85%;
+}
+
+.team__career-link-image {
+  grid-column: 1 / -1;
+  grid-row: 1 / 2;
+  align-self: center;
+  justify-self: center;
+  object-fit: contain;
+  width: 100%;
+  display: block;
+  height: auto;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - sf(4.5rem)),
+    0 calc(100% - sf(4.5rem))
+  );
+}
+
+.team__career-link-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  z-index: 5;
+}
+
+.team__career-link-text {
+  font-size: sf(2.4rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  letter-spacing: sf(-0.072rem);
+  text-align: center;
+
+  @include breakpoint(mobile) {
+    font-size: sf(2rem);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+    letter-spacing: sf(-0.02rem);
+  }
+}

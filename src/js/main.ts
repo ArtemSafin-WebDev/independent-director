@@ -25,6 +25,9 @@ import ourAdvantage from "./ourAdvantage";
 import competencies from "./competencies";
 import becomePart from "./becomePart";
 
+import resultBlock from "./resultBlock.ts";
+import competitionSlider from "./competition.ts";
+
 document.addEventListener("DOMContentLoaded", () => {
   smoothScrolling();
   intro();
@@ -50,6 +53,9 @@ document.addEventListener("DOMContentLoaded", () => {
   ourAdvantage();
   competencies();
   becomePart();
+
+  resultBlock()
+  competitionSlider()
 });
 
 window.addEventListener("load", () => {

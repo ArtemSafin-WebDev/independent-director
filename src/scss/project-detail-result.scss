@@ -208,7 +208,7 @@
     grid-row-gap: 26px;
     padding-bottom: sf(4rem);
     grid-template-areas: "pagination image" "text text";
-
+    background: #f6f6f6;
     border: 1px solid rgba(0, 0, 0, 0.1);
   }
 }
@@ -234,10 +234,12 @@
 
 .result-block__slider-card-pagination {
   &::before {
+    font-size: sf(2.4rem);
     counter-increment: result-num-slider;
     content: "0"counter(result-num-slider)"";
 
     @include breakpoint(mobile) {
+      font-size: 16px;
       color: rgba(0, 0, 0, .2);
 
     }

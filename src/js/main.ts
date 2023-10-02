@@ -27,6 +27,7 @@ import becomePart from "./becomePart";
 
 import resultBlock from "./resultBlock.ts";
 import competitionSlider from "./competition.ts";
+import ourProjectsDetail from "./ourProjectsDetail.ts";
 
 document.addEventListener("DOMContentLoaded", () => {
   smoothScrolling();
@@ -56,6 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   resultBlock()
   competitionSlider()
+  ourProjectsDetail()
 });
 
 window.addEventListener("load", () => {

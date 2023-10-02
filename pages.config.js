@@ -5,6 +5,7 @@ import services from "./pages-data/services";
 import about from "./pages-data/about";
 
 import projectsDetail from "./pages-data/projects-detail";
+import serviceDetail from "./pages-data/service-detail.js";
 
 const pagesConfig = {
   ...home,
@@ -13,7 +14,8 @@ const pagesConfig = {
   ...contacts,
   ...pagesConfig,
   ...about,
-  ...projectsDetail
+  ...projectsDetail,
+  ...serviceDetail
 };
 
 export default pagesConfig;

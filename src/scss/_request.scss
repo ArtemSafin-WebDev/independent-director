@@ -1,0 +1,209 @@
+.request {
+  @include blockWrapper;
+  margin-bottom: sf(13rem);
+  grid-row-gap: sf(7rem);
+  padding-top: sf(16rem);
+  @include breakpoint(mobile) {
+    margin-bottom: 60px;
+    padding-top: sf(9rem);
+    grid-row-gap: sf(4rem);
+  }
+}
+
+.request__content {
+  @include blockContent;
+
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-gap: 2rem;
+  grid-row-gap: sf(11rem);
+  @include breakpoint(mobile) {
+    @include mobileGrid;
+    gap: 0;
+  }
+}
+
+.request__breadcrumbs {
+  grid-row: 1 / 2;
+  align-self: flex-start;
+  justify-self: flex-start;
+  grid-column: 1 / 9;
+  color: var(--dark-text);
+  @include breakpoint(mobile) {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    margin-bottom: sf(6rem);
+  }
+  a {
+    font-size: sf(1.8rem);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: sf(0.018rem);
+    text-transform: uppercase;
+    transition: color 0.2s, text-decoration-color 0.2s;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+
+    @include breakpoint(mobile) {
+      font-size: sf(1.4rem);
+      font-style: normal;
+      font-weight: 400;
+      line-height: 120%;
+      letter-spacing: sf(0.028rem);
+      text-transform: uppercase;
+    }
+
+    &.active {
+      color: rgba(0, 0, 0, 0.25);
+      cursor: default;
+    }
+    &::after {
+      content: " / ";
+    }
+
+    &:last-child {
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
+
+.request__small-text {
+  grid-column: 9 / -1;
+  grid-row: 1 / 2;
+  font-size: sf(2.8rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  letter-spacing: sf(-0.056rem);
+
+  .spacer {
+    display: inline-block;
+    width: sf(7rem);
+  }
+
+  @include breakpoint(mobile) {
+    grid-column: 2 / -1;
+    grid-row: 2 / 3;
+    font-size: sf(1.4rem);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    margin-bottom: sf(4rem);
+    .spacer {
+      width: sf(5rem);
+    }
+  }
+}
+
+.text-date--active {
+  opacity: .4;
+  text-align: right;
+}
+
+.request__scroll-down {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  align-self: flex-end;
+  justify-self: flex-start;
+  display: grid;
+  place-items: center;
+  position: relative;
+  z-index: 1;
+  width: sf(6.4rem);
+  height: sf(6.4rem);
+  flex-shrink: 0;
+  @include breakpoint(mobile) {
+    display: none;
+  }
+
+  svg {
+    width: sf(2.5rem);
+    height: sf(2.5rem);
+    fill: rgba(0, 0, 0, 0.4);
+  }
+
+  &::before {
+    content: "";
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    z-index: -1;
+    transition: width 0.2s, height 0.2s;
+    position: absolute;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      &::before {
+        width: 80%;
+        height: 80%;
+      }
+    }
+  }
+}
+
+.request__heading {
+  grid-column: 4 / -1;
+  grid-row: 2 / 3;
+  align-self: flex-end;
+  font-size: sf(20rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 90%;
+  letter-spacing: sf(-0.8rem);
+
+  @include breakpoint(mobile) {
+    font-size: sf(5.6rem);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 90%;
+    letter-spacing: sf(-0.224rem);
+    grid-column: 1 / -1;
+    grid-row: 3 / 4;
+  }
+}
+
+.medium-header__heading {
+  font-size: sf(10rem);
+  line-height: 90%;
+  letter-spacing: -0.4rem;
+
+  @include breakpoint(mobile) {
+    font-size: sf(3.2rem);
+    line-height: 110%;
+    letter-spacing: -0.032rem;
+  }
+}
+
+.medium-large-header__heading {
+  font-size: sf(11rem);
+  line-height: 90%;
+  letter-spacing: -0.4rem;
+  width: 100%;
+  max-width: sf(122rem);
+  @include breakpoint(mobile) {
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 110%;
+    letter-spacing: -1.6px;
+  }
+}
+
+.large-header__heading {
+  font-size: sf(13rem);
+
+  @include breakpoint(mobile) {
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+    letter-spacing: -1.6px;
+  }
+}

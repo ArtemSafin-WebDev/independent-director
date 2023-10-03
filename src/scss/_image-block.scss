@@ -5,6 +5,12 @@
   margin-bottom: sf(26rem);
   background-color: black;
 
+  margin-top: sf(15rem);
+
+  @include breakpoint(mobile) {
+    margin-top: 80px;
+  }
+
   &--no-margin {
     margin-bottom: 0;
   }

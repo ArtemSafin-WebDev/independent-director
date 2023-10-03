@@ -1,0 +1,119 @@
+.recommend {
+  @include blockWrapper();
+}
+
+.recommend__content {
+  @include blockContent();
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+
+  @include breakpoint(mobile) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.recommend__heading {
+  font-size: sf(1.8rem);
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: sf(0.036rem);
+  text-transform: uppercase;
+
+  grid-column: 1 / 4;
+
+  @include breakpoint(mobile) {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0.28px;
+
+    margin-bottom: 40px;
+  }
+}
+
+.recommend__container {
+  grid-column: 4 / -1;
+}
+
+.recommend__title {
+  font-size: sf(8rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 110%;
+  letter-spacing: -0.24rem;
+
+  width: 100%;
+  max-width: 137.5rem;
+
+  margin-bottom: sf(5.7rem);
+
+  @include breakpoint(mobile) {
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+    letter-spacing: -0.32px;
+
+    margin-bottom: 40px;
+  }
+}
+
+.recommend__text {
+  font-size: sf(2.8rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  letter-spacing: -0.056rem;
+
+  width: 100%;
+  max-width: 98.3rem;
+
+  margin-bottom: sf(15rem);
+
+  @include breakpoint(mobile) {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+  }
+}
+
+.recommend__accord {
+  width: 100%;
+}
+
+.recommend__item {
+  font-size: sf(2.4rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%; /* 31.2px */
+  display: flex;
+  align-items: center;
+  column-gap: 1.5rem;
+
+  @include breakpoint(mobile) {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: -0.16px;
+
+    column-gap: 10px;
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    border-radius: 50%;
+    width: sf(.5rem);
+    height: sf(.5rem);
+    background: black;
+
+    @include breakpoint(mobile) {
+      width: 3.5px;
+      height: 3.5px;
+    }
+  }
+}
+

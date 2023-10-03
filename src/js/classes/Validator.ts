@@ -44,7 +44,7 @@ class Validator {
   private selects: HTMLElement[];
   private checkboxes: HTMLInputElement[];
   private hasBeenValidated: boolean = false;
-  public errors: ValidationError[] = [];
+  public  errors: ValidationError[] = [];
   private readonly emailRegex =
     /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 

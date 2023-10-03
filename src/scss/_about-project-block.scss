@@ -1,0 +1,143 @@
+.about-project {
+  @include blockWrapper;
+  margin-bottom: 23rem;
+  width: 100%;
+
+  @include breakpoint(mobile) {
+    margin-bottom: sf(11rem);
+  }
+}
+
+.about-project__content {
+  width: 100%;
+  @include blockContent;
+  @include desktopGrid;
+
+}
+
+.about-project__heading {
+  grid-column: 1 / 4;
+
+  @include breakpoint(mobile) {
+    margin-bottom: 40px;
+  }
+}
+
+.about-project__wrapper {
+  grid-column: 4 / -1
+}
+
+.about-project__title {
+  font-size: sf(8rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 110%;
+  letter-spacing: -0.24rem;
+  width: 100%;
+  margin-bottom: 13.2rem;
+
+  @include breakpoint(mobile) {
+    font-size: sf(2.6rem);
+    line-height: 120%;
+    letter-spacing: -0.26px;
+    margin-bottom: 70px;
+  }
+}
+
+.about-project__tasks {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 8.1rem;
+
+  counter-reset: about-tasks;
+
+  @include breakpoint(mobile) {
+    row-gap: 45pxrem;
+
+  }
+}
+
+.about-project__task {
+  width: 100%;
+  border-top: .1rem solid rgba(0, 0, 0, 0.10);
+
+  display: grid;
+  grid-template-columns: .865fr 1fr;
+  padding-top: 4rem;
+
+  @include breakpoint(mobile) {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid rgba(0, 0, 0, 0.10);
+    padding-top: 25px;
+  }
+}
+
+.about-project__task-name {
+  font-size: sf(4.2rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  letter-spacing: -0.042rem;
+
+  display: flex;
+  align-items: flex-start;
+  column-gap: 4rem;
+
+  @include breakpoint(mobile) {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    font-size: 26px;
+    margin-bottom: 25px;
+  }
+
+  &::before {
+    counter-increment: about-tasks;
+    content: "0"counter(about-tasks)"";
+    display: block;
+    position: relative;
+
+    font-size: sf(2.4rem);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    color: rgba(0, 0, 0, 0.25);
+  }
+}
+
+.about-project__task-lists {
+  list-style-type: disc;
+
+  display: flex;
+  flex-direction: column;
+  row-gap: 2.4rem;
+
+  @include breakpoint(mobile) {
+    row-gap: 16px;
+    padding: 0 10px;
+  }
+}
+
+.about-project__task-list::marker {
+  font-size: 2rem;
+  font-weight: bolder;
+
+  @include breakpoint(mobile) {
+    font-size: 10px;
+  }
+}
+
+.about-project__task-text{
+  font-size: sf(2.4rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+
+  @include breakpoint(mobile) {
+    font-size: 16px;
+    line-height: 110%;
+    letter-spacing: -0.16px;
+  }
+}

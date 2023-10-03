@@ -25,6 +25,11 @@ import ourAdvantage from "./ourAdvantage";
 import competencies from "./competencies";
 import becomePart from "./becomePart";
 
+import resultBlock from "./resultBlock.ts";
+import competitionSlider from "./competition.ts";
+import ourProjectsDetail from "./ourProjectsDetail.ts";
+import accordion from "./accordion.ts";
+
 document.addEventListener("DOMContentLoaded", () => {
   smoothScrolling();
   intro();
@@ -50,6 +55,11 @@ document.addEventListener("DOMContentLoaded", () => {
   ourAdvantage();
   competencies();
   becomePart();
+
+  resultBlock()
+  competitionSlider()
+  ourProjectsDetail()
+  accordion()
 });
 
 window.addEventListener("load", () => {

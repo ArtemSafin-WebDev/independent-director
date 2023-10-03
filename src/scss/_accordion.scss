@@ -1,0 +1,146 @@
+.js-accord {
+  counter-reset: accord-num;
+}
+
+.accord__container {
+  border-top: sf(.25rem) solid rgba(0, 0, 0, 0.10);
+  padding: sf(4rem) 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  transition: .4s ease border-top;
+  @include breakpoint(mobile) {
+    border-top: 1px solid rgba(0, 0, 0, 0.10);
+  }
+}
+.accord__container.--active {
+  border-top: sf(.25rem) solid rgba(0, 0, 0, 1);
+
+  @include breakpoint(mobile) {
+    border-top: 1px solid rgba(0, 0, 0, 0.10);
+  }
+}
+
+.accord__button {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  background: white;
+  overflow: hidden;
+}
+
+.accord__button-block {
+  display: flex;
+  align-items: flex-start;
+  column-gap: sf(13.1rem);
+
+  @include breakpoint(mobile) {
+    flex-direction: row-reverse;
+    column-gap: 13px;
+  }
+}
+
+.accord__num {
+  &::before {
+    counter-increment: accord-num;
+    content: "0"counter(accord-num)"";
+    display: block;
+
+    font-size: sf(2.4rem);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+
+    text-align: left;
+
+    color: rgba(0, 0, 0, 0.25);
+
+    @include breakpoint(mobile) {
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 110%;
+      letter-spacing: -0.16px;
+    }
+  }
+}
+
+.accord__title {
+  font-size: sf(4.2rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  letter-spacing: -0.042rem;
+  width: 100%;
+  max-width: 74.1rem;
+  text-align: start;
+
+  @include breakpoint(mobile) {
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -0.26px;
+    max-width: 303px;
+  }
+}
+
+.accord__arrow {
+  width: sf(5rem);
+  height: sf(5rem);
+  border-radius: 50%;
+
+  border: .1rem solid rgba(0, 0, 0, 0.25);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: .4s ease all;
+
+  svg {
+    fill: rgba(0, 0, 0, 0.25);
+    width: sf(2rem);
+    height: sf(2rem);
+  }
+
+  @include breakpoint(mobile) {
+    display: none;
+  }
+}
+
+.accord__button.--active > .accord__arrow {
+  transition: .4s ease all;
+  transform: rotate(90deg);
+  background: black;
+  border: .15rem solid rgba(0, 0, 0, 1);
+  svg {
+    fill: white;
+  }
+}
+
+.accord__content {
+  padding: 0 sf(15.1rem);
+  background: white;
+  max-height: 0;
+  will-change: max-height;
+  opacity: 0;
+
+  transition: all .6s ease;
+
+  @include breakpoint(mobile) {
+    max-height: 100%;
+    opacity: 1;
+    padding: 0;
+    margin: 25px 0;
+  }
+}
+
+.accord__content.--active {
+  margin-top: sf(4rem);
+  margin-bottom: sf(4rem);
+  opacity: 1;
+  overflow: visible;
+  transition: all .6s ease;
+}

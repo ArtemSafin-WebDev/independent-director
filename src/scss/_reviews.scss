@@ -12,6 +12,13 @@
   }
 }
 
+.reviews.top {
+  padding-top: sf(18rem);
+  @include breakpoint(mobile) {
+    padding-top: 80px;
+  }
+}
+
 .reviews__content {
   @include blockContent;
 }

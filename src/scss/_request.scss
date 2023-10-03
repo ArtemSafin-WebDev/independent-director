@@ -1,16 +1,16 @@
-.standard-header {
+.request {
   @include blockWrapper;
   margin-bottom: sf(13rem);
   grid-row-gap: sf(7rem);
   padding-top: sf(16rem);
   @include breakpoint(mobile) {
-    margin-bottom: sf(11rem);
+    margin-bottom: 60px;
     padding-top: sf(9rem);
     grid-row-gap: sf(4rem);
   }
 }
 
-.standard-header__content {
+.request__content {
   @include blockContent;
 
   display: grid;
@@ -23,7 +23,7 @@
   }
 }
 
-.standard-header__breadcrumbs {
+.request__breadcrumbs {
   grid-row: 1 / 2;
   align-self: flex-start;
   justify-self: flex-start;
@@ -70,7 +70,7 @@
   }
 }
 
-.standard-header__small-text {
+.request__small-text {
   grid-column: 9 / -1;
   grid-row: 1 / 2;
   font-size: sf(2.8rem);
@@ -103,7 +103,7 @@
   text-align: right;
 }
 
-.standard-header__scroll-down {
+.request__scroll-down {
   grid-column: 1 / 2;
   grid-row: 2 / 3;
   align-self: flex-end;
@@ -149,7 +149,7 @@
   }
 }
 
-.standard-header__heading {
+.request__heading {
   grid-column: 4 / -1;
   grid-row: 2 / 3;
   align-self: flex-end;
@@ -196,50 +196,14 @@
   }
 }
 
-.standard-header__heading-count {
-  display: inline-block;
-  vertical-align: top;
-  font-size: sf(2.4rem);
-  font-style: normal;
-  font-weight: 400;
-  line-height: 130%;
-  margin-top: 0.1em;
-  letter-spacing: 0;
+.large-header__heading {
+  font-size: sf(13rem);
 
   @include breakpoint(mobile) {
-    font-size: sf(1.2rem);
+    font-size: 40px;
     font-style: normal;
     font-weight: 400;
-    line-height: 120%;
-    letter-spacing: sf(-0.012rem);
-    margin-top: 0;
+    line-height: 110%;
+    letter-spacing: -1.6px;
   }
-}
-
-.standard-header__image-wrapper {
-  position: relative;
-  grid-column: 1 / -1;
-  &::before {
-    content: "";
-    display: block;
-    padding-bottom: 39%;
-  }
-
-  @include breakpoint(mobile) {
-    &::before {
-      padding-bottom: 60%;
-    }
-  }
-}
-
-.standard-header__image-parallax {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.standard-header__image {
-  @include imageFill;
 }

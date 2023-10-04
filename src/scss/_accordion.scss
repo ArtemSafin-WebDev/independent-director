@@ -127,7 +127,7 @@
   will-change: max-height;
   opacity: 0;
 
-  transition: all .6s ease;
+  transition: all .8s ease;
 
   @include breakpoint(mobile) {
     max-height: 100%;
@@ -142,5 +142,5 @@
   margin-bottom: sf(4rem);
   opacity: 1;
   overflow: visible;
-  transition: all .6s ease;
+  transition: all .8s ease;
 }

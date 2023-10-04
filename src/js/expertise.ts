@@ -195,8 +195,6 @@ export default function expertise() {
 
     const instance = new Swiper(mainContainer, mainSliderOptions);
 
-    console.log("number of slides", initialNumberOfMainSlides);
-
     instance.slideTo(initialNumberOfMainSlides / 2, 0);
 
     window.addEventListener("load", () => {

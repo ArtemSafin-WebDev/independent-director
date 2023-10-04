@@ -29,6 +29,8 @@ import resultBlock from "./resultBlock.ts";
 import competitionSlider from "./competition.ts";
 import ourProjectsDetail from "./ourProjectsDetail.ts";
 import accordion from "./accordion.ts";
+import serviceDetailHeader from "./serviceDetailHeader.ts";
+import recommend from "./recommend.ts";
 
 document.addEventListener("DOMContentLoaded", () => {
   smoothScrolling();
@@ -60,6 +62,8 @@ document.addEventListener("DOMContentLoaded", () => {
   competitionSlider()
   ourProjectsDetail()
   accordion()
+  serviceDetailHeader()
+  recommend()
 });
 
 window.addEventListener("load", () => {

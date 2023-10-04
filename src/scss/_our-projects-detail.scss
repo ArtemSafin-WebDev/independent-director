@@ -1,11 +1,9 @@
 .our-projects-detail {
   position: relative;
   @include blockWrapper;
-  margin-bottom: sf(23rem);
   background: #F6F6F6;
 
   @include breakpoint(mobile) {
-    margin-bottom: 80px;
     color: black;
 
     display: flex;
@@ -270,10 +268,42 @@
 
   margin-top: sf(8rem);
 
+  @media (hover: hover) {
+    &:hover {
+      .our-project-detail__text {
+        transform: translateY(-100%);
+      }
+
+      .our-project-detail__wrapper-text::after {
+        transform: translateY(-100%);
+      }
+    }
+  }
+
   @include breakpoint(mobile) {
     margin-top: 40px;
     font-size: 14px;
     padding: 22px 0;
     border-radius: 8px;
   }
+
+}
+
+.our-project-detail__wrapper-text {
+  display: block;
+  overflow: hidden;
+  position: relative;
+  &::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    height: auto;
+    transition: transform 0.4s;
+  }
+}
+.our-project-detail__text {
+  display: block;
+  transition: transform 0.4s;
 }

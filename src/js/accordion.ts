@@ -29,14 +29,12 @@ export default function accordion(): void {
         const accordionButton = container?.children[0] as HTMLElement
         const accordionContent = container?.children[1] as HTMLElement
 
-        let intermediateValue = false
+        container.addEventListener("mouseover", () => {
+            openAccordion(accordionContent, accordionContent.scrollHeight, accordionButton, container)
+        })
 
-        accordionButton.addEventListener("click", () => {
-          intermediateValue = !intermediateValue
-
-          intermediateValue
-            ? openAccordion(accordionContent, accordionContent.scrollHeight, accordionButton, container)
-            : closeAccordion(accordionContent, accordionButton, container)
+        container.addEventListener("mouseleave", () => {
+            closeAccordion(accordionContent, accordionButton, container)
         })
       })
     })

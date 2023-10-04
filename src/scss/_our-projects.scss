@@ -255,7 +255,7 @@
   font-weight: 400;
   line-height: 120%;
   letter-spacing: sf(-0.042rem);
-  max-width: sf(60rem);
+  max-width: sf(65rem);
 
   @include breakpoint(mobile) {
     font-size: sf(2.6rem);
@@ -271,7 +271,7 @@
   position: relative;
   border-radius: sf(1.2rem);
   overflow: hidden;
-  width: sf(15rem);
+  width: sf(23.5rem);
   &::before {
     content: "";
     display: block;
@@ -434,7 +434,7 @@
       height: sf(0.8rem);
       border-radius: 50%;
       flex-shrink: 0;
-      background-color: rgba(255, 255, 255, 0.2);
+      background-color: rgba(255, 255, 255, 1);
       transition: background-color 0.2s;
       cursor: pointer;
       &.swiper-pagination-bullet-active {

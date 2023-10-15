@@ -17,6 +17,7 @@
 
 .about-project__heading {
   grid-column: 1 / 4;
+  text-transform: uppercase;
 
   @include breakpoint(mobile) {
     margin-bottom: 40px;
@@ -54,7 +55,7 @@
   counter-reset: about-tasks;
 
   @include breakpoint(mobile) {
-    row-gap: 45pxrem;
+    row-gap: 45px;
 
   }
 }

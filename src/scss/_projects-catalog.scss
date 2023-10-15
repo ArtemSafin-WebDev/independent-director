@@ -187,7 +187,11 @@
   }
 
   @include breakpoint(mobile) {
-    display: none;
+    width: sf(17rem);
+    height: sf(4.5rem);
+    padding: sf(1.4rem) sf(1.6rem);
+    font-size: sf(1.2rem);
+    margin-top: sf(2rem);
   }
 }
 
@@ -212,6 +216,7 @@
 }
 
 .projects-catalog__card-number {
+  display: flex;
   grid-column: 9 / -1;
   grid-row: 1 / 2;
   align-self: flex-start;

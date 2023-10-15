@@ -20,7 +20,7 @@ export default function competitionSlider(): void {
           translate: [0, 0, -400],
         },
         next: {
-          translate: ["102%", 0, 0],
+          translate: ["108%", 0, 0],
         },
       },
       navigation: {

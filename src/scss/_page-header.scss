@@ -364,6 +364,51 @@ body.menu-open .page-header__logo-image {
   }
 }
 
+.page-header__nav-services {
+  @include breakpointMF(small-tablet) {
+    display: flex;
+    align-items: center;
+    font-size: sf(2rem);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    gap: sf(0.6rem);
+    color: var(--light-text);
+    transition: color 0.2s;
+    svg {
+      flex-shrink: 0;
+      fill: var(--light-text);
+      transition: fill 0.2s, transform 0.2s;
+      width: sf(0.8rem);
+      height: sf(0.5rem);
+    }
+
+    .page-header--dark & {
+      color: var(--dark-text);
+
+      svg {
+        fill: var(--dark-text);
+      }
+    }
+  }
+
+  @include breakpoint(mobile) {
+    font-size: sf(3.2rem);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+    letter-spacing: sf(-0.032rem);
+    color: var(--dark-text);
+    &:link,
+    &:visited {
+      color: var(--dark-text);
+    }
+    svg {
+      display: none;
+    }
+  }
+}
+
 .page-header__nav-link-text {
   display: block;
   transition: transform 0.3s;

@@ -251,8 +251,9 @@
 }
 
 .our-projects-detail__button {
+  grid-column: 5 / -1;
   text-align: center;
-  width: 100%;
+  width: 101%;
   padding: sf(4.4rem) 0;
   border-radius: sf(1.2rem);
   border: sf(.1rem) solid rgba(0, 0, 0, 0.10);

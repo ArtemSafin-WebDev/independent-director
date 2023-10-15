@@ -108,7 +108,11 @@
         transform: scale(1);
         opacity: 1;
         visibility: inherit;
-        transition: opacity 0.4s, visibility 0.4s, transform 0.4s;
+
+
+        @include breakpointMF(small-tablet) {
+          transition: opacity 0.4s, visibility 0.4s, transform 0.4s;
+        }
       }
 
       &::after {
@@ -199,7 +203,7 @@
   border-radius: 50%;
   margin-left: sf(2rem);
   margin-right: sf(1rem);
-  transition: transform 0.4s, opacity 0.4s, visibility 0s linear 0.4s;
+  transition: transform 1s, opacity 1s, visibility 0s linear 0.4s;
 
   position: absolute;
   left: var(--inline-size, 0);
@@ -216,7 +220,8 @@
   }
 
   @include breakpoint(mobile) {
-    display: none;
+    left: 80%;
+    top: 65%;
   }
 }
 
@@ -224,15 +229,13 @@
   display: grid;
   grid-template-rows: 0fr;
   transition: grid-template-rows 0.5s ease-in-out;
-  @include breakpoint(mobile) {
-    display: none;
-  }
 }
 
 .services__card-content-inner {
   overflow: hidden;
 
   @include breakpoint(mobile) {
+
   }
 }
 
@@ -248,6 +251,7 @@
   @include breakpoint(mobile) {
     font-size: sf(1.8rem);
     padding-top: sf(2rem);
+    padding-bottom: sf(7.5rem);
   }
 }
 

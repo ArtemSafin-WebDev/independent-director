@@ -8,6 +8,9 @@
   color: var(--light-text);
   @include blockWrapper;
 
+  background: rgb(9,121,81);
+  background: linear-gradient(0deg, rgba(9,121,81,0) 0%, rgba(255,255,255,.35) 100%);
+
   &--dark {
     color: var(--dark-text);
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -290,8 +293,15 @@ body.menu-open .page-header__logo-image {
 .page-header__nav-list-item {
   flex-shrink: 0;
 
+  &:first-child {
+    margin-right: sf(23.9rem);
+  }
+
   @include breakpoint(mobile) {
     flex-shrink: 1;
+    &:first-child {
+      margin-right: 0;
+    }
   }
 }
 

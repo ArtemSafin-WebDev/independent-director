@@ -102,7 +102,6 @@
     transition: transform 0.4s ease-in;
   }
 
-  @media (hover: hover) {
     &:hover {
       .services__card-arrow {
         transform: scale(1);
@@ -131,7 +130,6 @@
         transform: translateY(0);
       }
     }
-  }
 
   @include breakpoint(mobile) {
     padding-top: sf(2.5rem);

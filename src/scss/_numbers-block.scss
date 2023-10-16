@@ -116,6 +116,11 @@
         display: none;
       }
     }
+    &:last-child {
+      &::after {
+        display: none;
+      }
+    }
   }
 
   @include breakpoint(mobile) {
@@ -136,6 +141,8 @@
     padding-top: sf(2.5rem);
     gap: sf(2.5rem);
   }
+
+
 }
 
 .numbers-block__card-title {

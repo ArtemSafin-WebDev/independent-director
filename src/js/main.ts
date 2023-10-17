@@ -31,6 +31,7 @@ import ourProjectsDetail from "./ourProjectsDetail.ts";
 import accordion from "./accordion.ts";
 import serviceDetailHeader from "./serviceDetailHeader.ts";
 import recommend from "./recommend.ts";
+import OrderService from "./order-service.ts";
 
 document.addEventListener("DOMContentLoaded", () => {
   smoothScrolling();
@@ -64,6 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
   accordion()
   serviceDetailHeader()
   recommend()
+  OrderService()
 });
 
 window.addEventListener("load", () => {

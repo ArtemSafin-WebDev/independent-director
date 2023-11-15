@@ -8,7 +8,7 @@
   margin-top: sf(15rem);
 
   @include breakpoint(mobile) {
-    margin-top: 80px;
+    margin-top: 0;
   }
 
   &--no-margin {

@@ -7,7 +7,7 @@
   @include breakpoint(mobile) {
     margin-bottom: sf(11rem);
     color: black;
-    background: #F6F6F6;
+    background: #f6f6f6;
   }
 }
 
@@ -25,10 +25,16 @@
   background-position: center center;
   z-index: -3;
   @include breakpoint(mobile) {
-    top: 100%;
+    top: auto;
+    left: auto;
+    bottom: auto;
+    right: auto;
     background-size: cover;
-    height: min(270px, 100%);
+    height: 27rem;
+    position: relative;
     z-index: 0;
+    grid-column: 1 / -1;
+    order: 10;
   }
 }
 
@@ -49,6 +55,7 @@
     gap: 0;
     padding: sf(8rem) 0;
     align-items: stretch;
+    grid-row-gap: 0;
   }
 }
 
@@ -112,27 +119,27 @@
   .swiper-wrapper {
   }
 
-  .swiper-slide > .result-block__slider-card  {
-      transition: .4s ease all;
-      opacity: 0 !important;
+  .swiper-slide > .result-block__slider-card {
+    transition: 0.4s ease all;
+    opacity: 0 !important;
   }
 
   .swiper-slide {
   }
 
   .swiper-slide.swiper-slide-visible > .result-block__slider-card {
-      transition: .4s ease all;
-      opacity: 1 !important;
+    transition: 0.4s ease all;
+    opacity: 1 !important;
   }
 
   .swiper-slide.swiper-slide-next > .result-block__slider-card {
-      transition: .4s ease all;
-      opacity: 1 !important;
+    transition: 0.4s ease all;
+    opacity: 1 !important;
   }
 
   .swiper-slide.swiper-slide-prev > .result-block__slider-card {
-      transition: .4s ease all;
-      opacity: 0 !important;
+    transition: 0.4s ease all;
+    opacity: 0 !important;
   }
 }
 
@@ -159,7 +166,7 @@
   place-items: center;
   width: sf(6.4rem);
   height: sf(6.4rem);
-  border: 1px solid #FFF;
+  border: 1px solid #fff;
   border-radius: 50%;
   transition: opacity 0.2s, background-color 0.2s, border-color 0.2s;
 
@@ -200,7 +207,7 @@
   border-radius: sf(1.2rem);
   flex-grow: 1;
 
-  border: .1rem solid rgba(255, 255, 255, 0.40);
+  border: 0.1rem solid rgba(255, 255, 255, 0.4);
   @include breakpoint(mobile) {
     padding: sf(2rem);
     border-radius: sf(1rem);
@@ -238,16 +245,15 @@
   &::before {
     font-size: sf(2.4rem);
     counter-increment: result-num-slider;
-    content: "0"counter(result-num-slider)"";
+    content: "0" counter(result-num-slider) "";
 
     @include breakpoint(mobile) {
       font-size: 16px;
-      color: rgba(0, 0, 0, .2);
-
+      color: rgba(0, 0, 0, 0.2);
     }
   }
-  color: rgba(255, 255, 255, 0.40);
-  font-feature-settings: 'clig' off, 'liga' off;
+  color: rgba(255, 255, 255, 0.4);
+  font-feature-settings: "clig" off, "liga" off;
 
   font-size: sf(1.8rem);
   font-style: normal;
@@ -292,7 +298,6 @@
   font-weight: 400;
   line-height: 120%;
   max-width: sf(59rem);
-
 
   @include breakpoint(mobile) {
     max-width: none;

@@ -275,7 +275,7 @@
     width: sf(5.5rem);
     height: sf(5.5rem);
     &::before {
-      border-color: rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(0, 0, 0, 0.1);
     }
     svg {
       width: sf(1.8rem);

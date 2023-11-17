@@ -43,76 +43,80 @@ export default function services() {
 
     const learnMore = element.querySelector(".services__learn-more");
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: element,
-        start: ANIMATION_START,
-      },
-    });
-    tl.fromTo(
-      heading,
-      {
-        autoAlpha: 0,
-        y: 30,
-      },
-      {
-        autoAlpha: 1,
-        duration: 0.4,
-        y: 0,
-        ease: "power1.out",
-      }
-    )
-      .fromTo(
-        cards,
+    let mm = gsap.matchMedia();
+
+    mm.add("(min-width: 641px)", () => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: element,
+          start: ANIMATION_START,
+        },
+      });
+      tl.fromTo(
+        heading,
         {
           autoAlpha: 0,
-        },
-        {
-          autoAlpha: 1,
-          duration: 1,
-          ease: "power1.out",
-          stagger: 0.2,
-        },
-        "<"
-      )
-      .fromTo(
-        cardHeadings,
-        {
-          autoAlpha: 0,
-        },
-        {
-          autoAlpha: 1,
-          duration: 1,
-          ease: "power1.out",
-          stagger: 0.2,
-        },
-        "<"
-      )
-      .fromTo(
-        innerHeadings,
-        {
-          autoAlpha: 0,
-          yPercent: 100,
-        },
-        {
-          autoAlpha: 1,
-          duration: 1,
-          ease: "power2.out",
-          stagger: 0.2,
-          yPercent: 0,
-        },
-        "<"
-      )
-      .fromTo(
-        learnMore,
-        {
-          autoAlpha: 0,
+          y: 30,
         },
         {
           autoAlpha: 1,
           duration: 0.4,
-        },
-        ">-=0.5"
-      );
+          y: 0,
+          ease: "power1.out",
+        }
+      )
+        .fromTo(
+          cards,
+          {
+            autoAlpha: 0,
+          },
+          {
+            autoAlpha: 1,
+            duration: 1,
+            ease: "power1.out",
+            stagger: 0.2,
+          },
+          "<"
+        )
+        .fromTo(
+          cardHeadings,
+          {
+            autoAlpha: 0,
+          },
+          {
+            autoAlpha: 1,
+            duration: 1,
+            ease: "power1.out",
+            stagger: 0.2,
+          },
+          "<"
+        )
+        .fromTo(
+          innerHeadings,
+          {
+            autoAlpha: 0,
+            yPercent: 100,
+          },
+          {
+            autoAlpha: 1,
+            duration: 1,
+            ease: "power2.out",
+            stagger: 0.2,
+            yPercent: 0,
+          },
+          "<"
+        )
+        .fromTo(
+          learnMore,
+          {
+            autoAlpha: 0,
+          },
+          {
+            autoAlpha: 1,
+            duration: 0.4,
+          },
+          ">-=0.5"
+        );
+    });
   });
 }

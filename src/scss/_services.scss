@@ -102,34 +102,33 @@
     transition: transform 0.4s ease-in;
   }
 
-    &:hover {
-      .services__card-arrow {
-        transform: scale(1);
-        opacity: 1;
-        visibility: inherit;
+  &:hover {
+    .services__card-arrow {
+      transform: scale(1);
+      opacity: 1;
+      visibility: inherit;
 
-
-        @include breakpointMF(small-tablet) {
-          transition: opacity 0.4s, visibility 0.4s, transform 0.4s;
-        }
-      }
-
-      &::after {
-        transform: scaleX(1);
-        transition: transform 0.4s ease-out;
-      }
-
-      .services__card-content {
-        grid-template-rows: 1fr;
-        transition: grid-template-rows 0.5s ease-in-out 0.2s;
-      }
-
-      .services__card-text {
-        opacity: 1;
-        transition: opacity 0.3s ease 0.6s, transform 0.3s ease 0.6s;
-        transform: translateY(0);
+      @include breakpointMF(small-tablet) {
+        transition: opacity 0.4s, visibility 0.4s, transform 0.4s;
       }
     }
+
+    &::after {
+      transform: scaleX(1);
+      transition: transform 0.4s ease-out;
+    }
+
+    .services__card-content {
+      grid-template-rows: 1fr;
+      transition: grid-template-rows 0.5s ease-in-out 0.2s;
+    }
+
+    .services__card-text {
+      opacity: 1;
+      transition: opacity 0.3s ease 0.6s, transform 0.3s ease 0.6s;
+      transform: translateY(0);
+    }
+  }
 
   @include breakpoint(mobile) {
     padding-top: sf(2.5rem);
@@ -220,20 +219,32 @@
   @include breakpoint(mobile) {
     left: 80%;
     top: 65%;
+
+    opacity: 1;
+    visibility: inherit;
+    transform: scale(1);
+    width: 4rem;
+    height: 4rem;
+    top: auto;
+    bottom: 1rem;
+    svg {
+      width: 1.8rem;
+      height: 1.8rem;
+    }
   }
 }
 
 .services__card-content {
-  display: grid;
-  grid-template-rows: 0fr;
-  transition: grid-template-rows 0.5s ease-in-out;
+  @include breakpointMF(small-tablet) {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.5s ease-in-out;
+  }
 }
 
 .services__card-content-inner {
-  overflow: hidden;
-
-  @include breakpoint(mobile) {
-
+  @include breakpointMF(small-tablet) {
+    overflow: hidden;
   }
 }
 
@@ -247,9 +258,12 @@
   opacity: 0;
   transform: translateY(sf(2rem));
   @include breakpoint(mobile) {
-    font-size: sf(1.8rem);
+    font-size: sf(1.6rem);
     padding-top: sf(2rem);
     padding-bottom: sf(7.5rem);
+    opacity: 1;
+    transform: none;
+    padding-bottom: 0;
   }
 }
 

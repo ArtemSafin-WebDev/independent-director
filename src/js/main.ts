@@ -33,6 +33,7 @@ import serviceDetailHeader from "./serviceDetailHeader.ts";
 import recommend from "./recommend.ts";
 import OrderService from "./order-service.ts";
 import fixedHeader from "./fixedHeader.ts";
+import pageHeaderServices from "./pageHeaderServices.ts";
 
 document.addEventListener("DOMContentLoaded", () => {
   smoothScrolling();
@@ -68,6 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
   recommend();
   OrderService();
   fixedHeader();
+  pageHeaderServices();
 });
 
 window.addEventListener("load", () => {

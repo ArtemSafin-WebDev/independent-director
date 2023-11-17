@@ -26,7 +26,7 @@
   }
 
   @include breakpointMF(small-tablet) {
-    &:has(.page-header__services:hover) {
+    &.services-shown {
       color: var(--dark-text);
       border-bottom: 1px solid rgba(0, 0, 0, 0.1);
       background-color: #fff;
@@ -76,7 +76,7 @@
   }
 
   @include breakpointMF(small-tablet) {
-    .page-header:has(.page-header__services:hover) & {
+    .page-header.services-shown & {
       &:nth-child(1) {
         opacity: 0;
       }
@@ -287,7 +287,7 @@ body.menu-open .page-header__logo-image {
       }
     }
 
-    .page-header:has(.page-header__services:hover) & {
+    .page-header.services-shown & {
       color: var(--dark-text);
 
       svg {
@@ -391,6 +391,18 @@ body.menu-open .page-header__logo-image {
     height: sf(0.5rem);
   }
 
+  .page-header--dark & {
+    color: var(--dark-text);
+    &:link,
+    &:visited {
+      color: var(--dark-text);
+    }
+
+    svg {
+      fill: var(--dark-text);
+    }
+  }
+
   @include breakpointMF(small-tablet) {
     .fixed-header & {
       color: var(--dark-text);
@@ -404,7 +416,7 @@ body.menu-open .page-header__logo-image {
       }
     }
 
-    .page-header:has(.page-header__services:hover) & {
+    .page-header.services-shown & {
       color: var(--dark-text);
       &:link,
       &:visited {
@@ -662,7 +674,7 @@ body.menu-open .page-header__logo-image {
       }
     }
 
-    .page-header:has(.page-header__services:hover) & {
+    .page-header.services-shown & {
       color: var(--dark-text);
       &:link,
       &:visited {
@@ -804,7 +816,7 @@ body.menu-open .page-header__logo-image {
         color: var(--dark-text);
       }
     }
-    .page-header:has(.page-header__services:hover) & {
+    .page-header.services-shown & {
       color: var(--dark-text);
       &:link,
       &:visited {
@@ -932,7 +944,7 @@ body.menu-open .page-header__logo-image {
       }
     }
 
-    .page-header:has(.page-header__services:hover) & {
+    .page-header.services-shown & {
       border: 1px solid rgba(0, 0, 0, 0.25);
       svg {
         fill: var(--dark-text);

@@ -449,7 +449,7 @@ textarea.contact-us__form-input {
 
   @media (hover: hover) {
     &:hover {
-      .contact-us__form-submit-text-wrapper::after {
+      .contact-us__form-submit-text:nth-child(2) {
         transform: translateY(-100%);
       }
 
@@ -477,20 +477,20 @@ textarea.contact-us__form-input {
   display: block;
   position: relative;
   overflow: hidden;
-  &::after {
-    content: attr(data-text);
-    position: absolute;
-    left: 0;
-    top: 100%;
-    width: 100%;
-    height: auto;
-    transition: transform 0.4s;
-  }
 }
 
 .contact-us__form-submit-text {
   transition: transform 0.4s;
   display: block;
+}
+
+.contact-us__form-submit-text:nth-child(2) {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  height: auto;
+  transition: transform 0.4s;
 }
 
 .contact-us__form-field-select {

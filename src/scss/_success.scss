@@ -126,11 +126,11 @@
 
   @media (hover: hover) {
     &:hover {
-      .success__back-btn-text-wrapper::after {
+      .success__back-btn-text:nth-child(1) {
         transform: translateY(-100%);
       }
 
-      .success__back-btn-text {
+      .success__back-btn-text:nth-child(2) {
         transform: translateY(-100%);
       }
     }
@@ -152,19 +152,18 @@
   display: block;
   overflow: hidden;
   position: relative;
-
-  &::after {
-    content: attr(data-text);
-    position: absolute;
-    left: 0;
-    top: 100%;
-    width: 100%;
-    height: auto;
-    transition: transform 0.2s;
-  }
 }
 
 .success__back-btn-text {
   transition: transform 0.2s;
   display: block;
+}
+
+.success__back-btn-text:nth-child(2) {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  height: auto;
+  transition: transform 0.2s;
 }

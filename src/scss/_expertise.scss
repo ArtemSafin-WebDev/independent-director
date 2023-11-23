@@ -148,7 +148,7 @@
     transition: none;
   }
 
-  .expertise__slider-card-title::after {
+  .expertise__slider-card-title-text:nth-child(2) {
     transition: none;
   }
 
@@ -222,14 +222,6 @@
   overflow: hidden;
   position: relative;
   padding: sf(0.5rem) 0;
-  &::after {
-    content: attr(data-text);
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    transition: transform 0.6s;
-  }
 
   @include breakpoint(mobile) {
     font-size: sf(1.4rem);
@@ -246,6 +238,14 @@
   transition: transform 0.6s;
 }
 
+.expertise__slider-card-title-text:nth-child(2) {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  transition: transform 0.6s;
+}
+
 .swiper-slide:not(.swiper-slide-active) .expertise__slider-card {
   @media (hover: hover) {
     &:hover {
@@ -253,10 +253,8 @@
         transform: translateY(calc(-100% - sf(1rem)));
       }
 
-      .expertise__slider-card-title {
-        &::after {
-          transform: translateY(calc(-100% - sf(1rem)));
-        }
+      .expertise__slider-card-title-text:nth-child(2) {
+        transform: translateY(calc(-100% - sf(1rem)));
       }
     }
   }

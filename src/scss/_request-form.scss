@@ -55,7 +55,6 @@
 }
 
 .request__form-field-wrapper {
-
 }
 
 .request__form-field-wrapper-textarea {
@@ -315,11 +314,11 @@
 
   @media (hover: hover) {
     &:hover {
-      .request__form-submit-text-wrapper::after {
+      .request__form-submit-text:nth-child(1) {
         transform: translateY(-100%);
       }
 
-      .request__form-submit-text {
+      .request__form-submit-text:nth-child(2) {
         transform: translateY(-100%);
       }
     }
@@ -343,18 +342,18 @@
   display: block;
   position: relative;
   overflow: hidden;
-  &::after {
-    content: attr(data-text);
-    position: absolute;
-    left: 0;
-    top: 100%;
-    width: 100%;
-    height: auto;
-    transition: transform 0.4s;
-  }
 }
 
 .request__form-submit-text {
   transition: transform 0.4s;
   display: block;
+}
+
+.request__form-submit-text:nth-child(2) {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  height: auto;
+  transition: transform 0.4s;
 }
